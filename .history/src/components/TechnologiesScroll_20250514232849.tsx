@@ -126,13 +126,13 @@ export function TechnologiesScroll() {
             : {}
         }
       >
-        <div className="hidden sm:flex gap-2">
+        <div className="hidden sm:flex gap-2 border">
           {technologies.map((feature) => (
             <TechnologyBadge key={feature.name} feature={feature} />
           ))}
         </div>
         {isMobile && (
-          <div className="flex sm:hidden gap-2">
+          <div className="flex gap-2">
             {technologies.map((feature) => (
               <TechnologyBadge
                 key={`${feature.name}-duplicate`}

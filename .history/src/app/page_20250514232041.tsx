@@ -276,7 +276,7 @@ export default async function Home() {
   return (
     <>
 
-      <Container className="mt-10 md:mt-28">
+      <Container className="mt-28">
         <div className="flex flex-col gap-8 lg:flex-row">
           <div className="aspect-square w-full rounded-2xl border border-zinc-200 bg-zinc-100 lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 dark:bg-zinc-800">
             <Image
@@ -286,7 +286,7 @@ export default async function Home() {
               priority
             />
           </div>
-          <div className="w-full lg:w-3/4 overflow-hidden sm:overflow-visible">
+          <div className="w-full lg:w-3/4">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
               Hi, I&apos;m Tom
             </h1>

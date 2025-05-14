@@ -137,7 +137,7 @@ export default function LandingSlider({
             className={clsx(
               'cursor-pointer rounded px-4 py-2 text-sm font-medium transition-all duration-200',
               activeTab === tab.id
-                ? 'flex-1 bg-blue-500/90 font-semibold text-zinc-100 hover:bg-blue-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-blue-500/50 dark:hover:bg-blue-500 dark:active:bg-blue-700 dark:active:text-zinc-100/70'
+                ? 'flex-1 bg-blue-500/80 font-semibold text-zinc-100 hover:bg-blue-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-blue-500/50 dark:hover:bg-blue-500 dark:active:bg-blue-700 dark:active:text-zinc-100/70'
                 : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700',
             )}
           >

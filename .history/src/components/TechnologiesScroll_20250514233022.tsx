@@ -105,7 +105,7 @@ export function TechnologiesScroll() {
     <div className="relative mt-6 w-full">
       <motion.div
         ref={containerRef}
-        className="flex whitespace-nowrap"
+        className="flex whitespace-nowrap overflow-hidden"
         animate={
           isMobile
             ? {

@@ -4,10 +4,10 @@ import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import UQLogo from '@/images/UQLogo2.png'
-import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa'
-import { SiTypescript, SiGooglecloud } from 'react-icons/si'
-import { IoLogoFirebase } from 'react-icons/io5'
-import { CgCPlusPlus } from 'react-icons/cg'
+import { FaReact, FaNodeJs, FaPython, FaAws } from "react-icons/fa";
+import { SiTypescript, SiGooglecloud } from "react-icons/si";
+import { IoLogoFirebase } from "react-icons/io5";
+import { CgCPlusPlus } from "react-icons/cg";
 
 export const experience = [
   {
@@ -97,75 +97,73 @@ export const projects = [
 
 export const technologies = [
   {
-    name: 'Typescript',
+    name: "Typescript",
     description:
-      'Like most people I started off learning the basics of Javascript, before diving into React/React Native, then switched to Typescript for most projects.',
+      "Like most people I started off learning the basics of Javascript, before diving into React/React Native, then switched to Typescript for most projects.",
     icon: SiTypescript,
-    experience: '4+',
+    experience: "4+",
   },
   {
-    name: 'Python',
+    name: "Python",
     description:
       "Python was the first language I learnt during university, and I have used it extensively at my previous workplace for manipulating large datasets with pandas and numpy. It's my go to when I need to manipulate files/images within my OS. However, it has been a few years since I have used it for any major projects.",
     icon: FaPython,
-    experience: '4+',
+    experience: "4+",
   },
   {
-    name: 'C++',
+    name: "C++",
     description:
-      'I have a basic understanding of C++ programming structures, and primarily use it for IoT programming using STM32, ESP32, and Arduino microcrontrollers.',
+      "I have a basic understanding of C++ programming structures, and primarily use it for IoT programming using STM32, ESP32, and Arduino microcrontrollers.",
     icon: CgCPlusPlus,
-    experience: '1',
+    experience: "1",
   },
   {
-    name: 'React',
+    name: "React",
     description:
       "I first started learning React in 2019, right before Covid and the 16.8.0 Hooks update. Then I built my first React Native application in early 2021. I've also gained a solid knowledge of HTML/CSS at the same time.",
     icon: FaReact,
-    experience: '4+',
+    experience: "4+",
   },
   {
-    name: 'Node.js',
-    description:
-      'Node.js, and specifically Express.js, was the first backend framework I learnt along side React. I have experience with MongoDB, node-postgres (PostgreSQL). I have recently been teaching myself how to use GraphQL to interact with APIs more efficiently.  ',
+    name: "Node.js",
+    description: "Node.js, and specifically Express.js, was the first backend framework I learnt along side React. I have experience with MongoDB, node-postgres (PostgreSQL). I have recently been teaching myself how to use GraphQL to interact with APIs more efficiently.  ",
     icon: FaNodeJs,
-    experience: '4+',
+    experience: "4+",
   },
 
+
+
   {
-    name: 'Firebase',
+    name: "Firebase",
     description:
       "Firebase is my go-to BaaS for small or personal projects. I've got extensive experience with it's use cases, specifically with Authentication, Firestore, and Hosting.",
     icon: IoLogoFirebase,
-    experience: '4+',
+    experience: "4+",
   },
   {
-    name: 'AWS',
+    name: "AWS",
     description:
-      'For larger projects, I tend to use serverless containerized functions as the backend with Docker and AWS Lambda. I have experience using EC2, S3, Elastic Beanstalk, CloudWatch, IoT Core, and CodePipeline.',
+      "For larger projects, I tend to use serverless containerized functions as the backend with Docker and AWS Lambda. I have experience using EC2, S3, Elastic Beanstalk, CloudWatch, IoT Core, and CodePipeline.",
     icon: FaAws,
-    experience: '4+',
+    experience: "4+",
   },
   {
-    name: 'GCP',
+    name: "GCP",
     description:
-      'I have some experience using the Google Cloud Platform directly outside of the Firebase framework, including Cloud Run, Cloud Functions, Compute Engine, and Cloud Storage.',
+      "I have some experience using the Google Cloud Platform directly outside of the Firebase framework, including Cloud Run, Cloud Functions, Compute Engine, and Cloud Storage.",
     icon: SiGooglecloud,
-    experience: '1',
+    experience: "1",
   },
-]
+];
 
 export const education = {
   university: 'University of Queensland',
   degree: 'Bachelor of Mechanical Engineering (Honors)',
   graduationDate: 'June, 2019',
   location: 'Brisbane, QLD',
-  description:
-    'Attended St Johns College and played rugby union & tennis for the first two years of my university education. Received first class honours for my thesis on using renewable technologies to power cryptocurrency mining.',
+  description: 'Attended St Johns College and played rugby union & tennis for the first two years of my university education. Received first class honours for my thesis on using renewable technologies to power cryptocurrency mining.',
   logo: UQLogo,
   link: 'https://www.uq.edu.au/',
-  link2:
-    'https://study.uq.edu.au/study-options/programs/bachelor-engineering-honours-2455/mechanical-engineering-mechae2455#overview',
 }
 
 // function Photos() {

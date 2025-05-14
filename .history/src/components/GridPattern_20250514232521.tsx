@@ -116,7 +116,7 @@ export function GridPattern({
                 blocks.filter((b) => b[2] !== block[2]),
               )
             }}
-            className="fill-blue-200/30 stroke-neutral-950/10 dark:fill-blue-700/30 dark:stroke-neutral-100/10"
+            className="fill-blue-200/30 stroke-neutral-950/10 dark:fill-blue-700 dark:stroke-neutral-100/10"
           />
         ))}
       </svg>

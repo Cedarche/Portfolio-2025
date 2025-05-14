@@ -17,7 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="fixed inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50 to-transparent dark:from-neutral-800/50 dark:to-transparent">
         <GridPattern
-          className="absolute inset-0 h-full w-full [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_70%)] fill-neutral-100 stroke-neutral-950/5 dark:[mask-image:linear-gradient(to_bottom_left,black_40%,transparent_70%)] dark:fill-neutral-700/50 dark:stroke-neutral-100/5"
+          className="absolute inset-0 h-full w-full [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-100 stroke-neutral-950/5 dark:[mask-image:linear-gradient(to_bottom_left,black_40%,transparent_70%)] dark:fill-neutral-700/50 dark:stroke-neutral-100/5"
           yOffset={-270}
         />
       </div>

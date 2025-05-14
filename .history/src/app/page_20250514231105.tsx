@@ -110,23 +110,11 @@ function Education() {
         <dl className="flex flex-auto flex-wrap gap-x-2">
           <dt className="sr-only">University</dt>
           <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-            <Link
-              href={education.link}
-              target="_blank"
-              className="hover:underline"
-            >
-              {education.university}
-            </Link>
+            <Link href={education.link} target="_blank" className="hover:underline">{education.university}</Link> 
           </dd>
           <dt className="sr-only">Degree</dt>
           <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-            <Link
-              href={education.link2}
-              target="_blank"
-              className="hover:underline"
-            >
-              {education.degree}
-            </Link>
+            <Link href={education.link2} target="_blank" className="hover:underline">{education.degree}</Link>
           </dd>
           <dt className="sr-only">Date and Location</dt>
           <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
@@ -275,10 +263,9 @@ export default async function Home() {
 
   return (
     <>
-
-      <Container className="mt-10 md:mt-28">
+      <Container className="mt-28">
         <div className="flex flex-col gap-8 lg:flex-row">
-          <div className="aspect-square w-full rounded-2xl border border-zinc-200 bg-zinc-100 lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 dark:bg-zinc-800">
+          <div className="aspect-square w-full lg:mr-2 lg:w-1/4 border rounded-2xl dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700/60">
             <Image
               src={avatarImage}
               alt="Tom Carruthers"
@@ -286,7 +273,7 @@ export default async function Home() {
               priority
             />
           </div>
-          <div className="w-full lg:w-3/4 overflow-hidden sm:overflow-visible">
+          <div className="w-full lg:w-3/4">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
               Hi, I&apos;m Tom
             </h1>
@@ -332,6 +319,12 @@ export default async function Home() {
           </div>
         </div>
       </Container>
+      <div className="fixed inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50 to-transparent dark:from-neutral-800/50 dark:to-transparent">
+        <GridPattern
+          className="absolute inset-0 h-full w-full [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-100 stroke-neutral-950/5 dark:[mask-image:linear-gradient(to_bottom_left,black_40%,transparent_70%)] dark:fill-neutral-700/50 dark:stroke-neutral-100/5"
+          yOffset={-270}
+        />
+      </div>
     </>
   )
 }

@@ -286,7 +286,7 @@ export default async function Home() {
               priority
             />
           </div>
-          <div className="w-full lg:w-3/4 overflow-hidden sm:overflow-visible">
+          <div className="w-full lg:w-3/4 overflow-hidden">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
               Hi, I&apos;m Tom
             </h1>
