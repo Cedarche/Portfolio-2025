@@ -9,12 +9,6 @@ import { SiTypescript, SiGooglecloud } from 'react-icons/si'
 import { IoLogoFirebase } from 'react-icons/io5'
 import { CgCPlusPlus } from 'react-icons/cg'
 
-// App icon imports
-import Snappark from '@/images/logos/Snappark.png'
-import Crosscopy from '@/images/logos/Crosscopy.png'
-import Ream from '@/images/logos/Ream.png'
-import Assetrix from '@/images/logos/Assetrix.png'
-
 export const experience = [
   {
     id: 'article-1',
@@ -65,37 +59,37 @@ export const experience = [
 
 export const projects = [
   {
-    name: 'Snap Park',
-    description:
-      'A management tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
-    link: { href: 'https://snappark.co', label: 'snappark.co' },
-    logo: Snappark,
-  },
-  {
     name: 'Ream',
     description:
-      'An end-to-end digital receipt system aimed at both enterprise and consumer applications. ',
+      'Ream is an end-to-end digital receipt system aimed at both enterprises and consumers. It consists of Web & Native Mobile applications, and a hardware component, the Ream Tile, for which I designed the PCB and housing from the ground up.',
     link: { href: 'https://reamreceipts.com/', label: 'reamreceipts.com' },
-    logo: Ream,
+    logo: logoPlanetaria,
   },
   {
     name: 'Cross Copy',
     description:
-      'A simply cross-platform file transfer service that just works - without the hassle or complexity of Dropbox or Google Drive. ',
-    link: { href: 'https://crosscopy.dev', label: 'crosscopy.dev' },
-    logo: Crosscopy,
-  },
-  {
-    name: 'Assetrix',
-    description:
-      'A custom internal asset tracking tool that uses QR Codes to track the location, P&ID, ISO number for industrial equipment.',
+      'High performance web animation library, hand-written in optimized WASM.',
     link: { href: '#', label: 'github.com' },
-    logo: Assetrix,
+    logo: logoAnimaginary,
   },
   {
-    name: 'Stellarmetrics',
+    name: 'HelioStream',
     description:
-      'A remote monitoring solution for assets in rural areas, it utilises the SWARM satellite network to send small packets of data (tank water levels, pressure readings, etc.) for a fraction of the cost of traditional systems.',
+      'Real-time video streaming library, optimized for interstellar transmission.',
+    link: { href: '#', label: 'github.com' },
+    logo: logoHelioStream,
+  },
+  {
+    name: 'cosmOS',
+    description:
+      'The operating system that powers our Planetaria space shuttles.',
+    link: { href: '#', label: 'github.com' },
+    logo: logoCosmos,
+  },
+  {
+    name: 'OpenShuttle',
+    description:
+      'The schematics for the first rocket I designed that successfully made it to orbit.',
     link: { href: '#', label: 'github.com' },
     logo: logoOpenShuttle,
   },

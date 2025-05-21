@@ -82,7 +82,7 @@ export const projects = [
     name: 'Cross Copy',
     description:
       'A simply cross-platform file transfer service that just works - without the hassle or complexity of Dropbox or Google Drive. ',
-    link: { href: 'https://crosscopy.dev', label: 'crosscopy.dev' },
+    link: { href: '#', label: 'github.com' },
     logo: Crosscopy,
   },
   {

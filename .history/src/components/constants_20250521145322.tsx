@@ -65,37 +65,37 @@ export const experience = [
 
 export const projects = [
   {
-    name: 'Snap Park',
-    description:
-      'A management tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
-    link: { href: 'https://snappark.co', label: 'snappark.co' },
-    logo: Snappark,
-  },
-  {
     name: 'Ream',
     description:
-      'An end-to-end digital receipt system aimed at both enterprise and consumer applications. ',
+      'Ream is an end-to-end digital receipt system aimed at both enterprises and consumers. It consists of Web & Native Mobile applications, and a hardware component, the Ream Tile, for which I designed the PCB and housing from the ground up.',
     link: { href: 'https://reamreceipts.com/', label: 'reamreceipts.com' },
     logo: Ream,
   },
   {
     name: 'Cross Copy',
     description:
-      'A simply cross-platform file transfer service that just works - without the hassle or complexity of Dropbox or Google Drive. ',
-    link: { href: 'https://crosscopy.dev', label: 'crosscopy.dev' },
+      'Cross Copy is a simply cross-platform application I built to quickly transfer text and files without the hassle or complexity of Dropbox or Google Drive. You can share photos, videos, and files natively on your mobile device - then instantly access them on any of your other devices.',
+    link: { href: '#', label: 'github.com' },
     logo: Crosscopy,
+  },
+  {
+    name: 'Snap Park',
+    description:
+      'A management tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
+    link: { href: '#', label: 'github.com' },
+    logo: Snappark,
   },
   {
     name: 'Assetrix',
     description:
-      'A custom internal asset tracking tool that uses QR Codes to track the location, P&ID, ISO number for industrial equipment.',
+      'Assetrix is an internal asset tracking system that uses QR Codes to track the location, P&ID, ISO number for industrial equipment. It was built specifically for a client at my previous job in order to keep track of the decommissioning of a complex gas compressor station and is still in use today.',
     link: { href: '#', label: 'github.com' },
     logo: Assetrix,
   },
   {
     name: 'Stellarmetrics',
     description:
-      'A remote monitoring solution for assets in rural areas, it utilises the SWARM satellite network to send small packets of data (tank water levels, pressure readings, etc.) for a fraction of the cost of traditional systems.',
+      'Stellarmetrics is a remote monitoring solution for assets in rural areas, it utilises the SWARM satellite network to send small packets of data (tank water levels, pressure readings, etc.) for a fraction of the cost of traditional systems.',
     link: { href: '#', label: 'github.com' },
     logo: logoOpenShuttle,
   },

@@ -101,7 +101,6 @@ function Projects() {
             <div className="ml-auto text-sm mt-1">
               <Link
                 href={project.link.href}
-                target='_blank'
                 className="relative z-20 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200"
               >
                 <LinkIcon className="h-6 w-6 flex-none" />
