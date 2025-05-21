@@ -1,10 +1,12 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
-import designSystem from './planetaria-design-system.png'
+import hero from './Snap_park_hero.png'
+import example_sticker from './Example_Sticker.png'
+import example_spot from './Example_spot.png'
 
 export const article = {
   author: 'Tom Carruthers',
   date: '2025-04-05',
-  title: 'Crafting a design system for a multiplanetary future',
+  title: 'Snap Park - A complex solution to a simple problem',
   description:
     'Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.',
 }
@@ -16,26 +18,44 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
+Snap Park is my latest and most developed endevour, I built it to solve a common problem among many companies - office parking spot availability.
 
-<Image src={designSystem} alt="" />
+<Image src={hero} alt="The Snap Park Landing page." />
 
-I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
+What started as a simple experiment with QR codes quickly developed into 4-6 month obsession where I spent every moment outside work hours developing a fully functional SaaS product - complete with detailed landing page, thorough onboarding process, billing, and a functional dashboard.
 
-## Sermone fata
+## The Problem
 
-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+At my previous job we had 20 employees who drove to work, and only 6 available carparks in the office. However, as it was a multi-story carpark, there was no way of knowing if there were still spots available before driving all the way up to check. Unless you were there bright and early, you enevitably found yourself frustrated, fighting your way back down against oncoming traffic, only to then have to seek out some kind of alternative parking (in a busy business district).
 
-Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
-levitate quas ubi arcum ripas oculos abest. Adest [commissaque
-victae](#) in gemitus nectareis ire diva
-dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
-nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
-nil utinam paternos ima, commentaque.
+While Snap Park doesnt aleviate the issue of parking spot
+availability, it at least saves you the hassle and time of getting
+stuck in an already full office carpark.
+
+Having just recently built Assetrix for a client at work, I was
+inspired by how easy it was to use QR codes for inventory
+management, and was looking for other ways I could utilise them.
+The premise of Snap Park is quite simple, I placed QR code
+stickers like the one below on each of our carparks, when an
+employee arrives at work and takes an available park, they then
+scan the adjacent code and mark it as unavailable on it's
+associated webpage. When all carparks are taken, a text message is
+sent out to all employees enrolled in the system that the work
+carpark is now full, and that they should seek alternative
+parking.
+
+<div className="flex flex-row justify-center">
+  <Image
+    src={example_sticker}
+    alt="An example of a QR Code Sticker."
+    className=" w-[300px]"
+  />
+  <Image
+    src={example_spot}
+    alt="An example of a QR Code Sticker."
+    className="h-auto w-[300px]"
+  />
+</div>
 
 ```c
 exbibyte_wins = gigahertz(3);

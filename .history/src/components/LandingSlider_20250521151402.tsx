@@ -39,7 +39,7 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function Blog({ articles }: { articles: ArticleWithSlug[] }) {
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-16 mt-10">
       {articles.map((article) => (
         <Article key={article.slug} article={article} />
       ))}

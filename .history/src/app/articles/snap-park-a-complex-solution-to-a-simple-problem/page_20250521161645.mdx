@@ -1,0 +1,115 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import hero from './Snap_park_hero.png'
+import example_sticker from './Example_Sticker.png'
+import example_spot from './Example_spot.png'
+import dashboard_example from './Dashboard_Example.png'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-04-05',
+  title: 'Snap Park - A complex solution to a simple problem',
+  description:
+    'Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Snap Park is my latest and most developed endevour, I built it to solve a common problem among many companies - office parking spot availability.
+
+<Image src={hero} alt="The Snap Park Landing page." />
+
+What started as a simple experiment with QR codes quickly developed into 4-6 month obsession where I spent every moment outside work hours developing a fully functional SaaS product - complete with detailed landing page, thorough onboarding process, billing, and a functional dashboard.
+
+## The Problem
+
+At my previous job we had 20 employees who drove to work, and only 6 available carparks in the office. However, as it was a multi-story carpark, there was no way of knowing if there were still spots available before driving all the way up to check. Unless you were there bright and early, you enevitably found yourself frustrated, fighting your way back down against oncoming traffic, only to then have to seek out some kind of alternative parking (in a busy business district).
+
+While Snap Park doesnt aleviate the issue of parking spot
+availability, it at least saves you the hassle and time of getting
+stuck in an already full office carpark.
+
+Having just recently built Assetrix for a client at work, I was
+inspired by how easy it was to use QR codes for inventory
+management, and was looking for other ways I could utilise them.
+The premise of Snap Park is quite simple, I placed QR code
+stickers like the one below on each of our carparks:
+
+<div className="flex flex-col justify-center items-center">
+
+<Image
+  src={example_sticker}
+  alt="An example of a QR Code Sticker."
+  className="h-[400px] w-auto"
+/>
+</div>
+
+When an employee arrives at work and takes an available park, they then
+scan the adjacent code and mark it as unavailable on it's
+associated webpage.
+
+<div className="flex flex-col justify-center items-center">
+
+  <Image
+    src={example_spot}
+    alt="An example of a QR Code Sticker."
+    className="h-auto w-[300px] border border-zinc-100"
+  />
+</div>
+
+When all carparks are taken, a text message is
+sent out to all employees enrolled in the system that the work
+carpark is now full, and that they should seek alternative
+parking.
+
+At any point an employee can simply visit their company's page to quickly see which carparks are still available, and at what time each unavailable spot was taken. At midnight local time, a GCP cloud function runs that will automatically reset each parking spot back to available, ready for the next day.
+
+## The Snap Park Web Application
+
+I built an initial proof of concept for the system in my own time, then deployed it at my previous workplace. At first I didn't think much of the idea, but it was simple and effective. It was of course costing my a decent amount to send out hundreds of texts per week though, even with the cheapest available cloud messaging provider.
+
+After about 6 months I went to the company directors to try and gauge their response to the system, and whether it was worthwhile paying for. The answer from the company directors was a resounding yes, and the general response from all the employees in the office was that it genuinely provided value. So I decided to build out the prototype into a B2B service, with a dashboard, analytics, and billing/subscriptions methods.
+
+It turns out that building such a system is easy for one company, but quite difficult when trying to handle multiple companies, and support multiple offices for each company. I essentially had to start from scratch, integrating authentication, usage based billing via Stripe, and re-structuring my database to correctly protect the sensitive information of each company and their employees.
+
+<Image src={dashboard_example} alt="The Snap Park Dashboard." />
+
+
+## Lethaei Pindumve me quae dinumerat Pavor
+
+Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
+divite: et ille illa furit sim verbis Cyllenius.
+
+1. Captus inpleverunt collo
+2. Nec nam placebant
+3. Siquos vulgus
+4. Dictis carissime fugae
+5. A tacitos nulla viginti
+
+Ungues fistula annoso, ille addit linoque motatque uberior verso
+[rubuerunt](#) confine desuetaque. _Sanguine_ anteit
+emerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine
+fossas Cephisos formosa! Refugitque amata [refelli](#)
+supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
+regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
+ars talis.
+
+```c
+digital.webcam_dual_frequency = webmasterMms;
+if (5 + language_standalone_google) {
+    cc_inbox_layout *= file_character;
+    task += p;
+    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
+            adf);
+}
+windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
+        dongleBashThumbnail), interpreter);
+```
+
+Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
+proelia: illo patrio _esse summus_, enim sua serpentibus, Hyleusque. Est coniuge
+recuso; refert Coroniden ignotos manat, adfectu.

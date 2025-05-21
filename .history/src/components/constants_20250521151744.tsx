@@ -74,7 +74,7 @@ export const projects = [
   {
     name: 'Ream',
     description:
-      'An end-to-end digital receipt system aimed for enterprise and consumer applications that utilizes custom BLE/IoT and dynamic NFC electronics.',
+      'An end-to-end digital receipt system aimed for enterprise and consumer applications. The Ream Tile provides a link to the end user via dynamic NFC.',
     link: { href: 'https://reamreceipts.com/', label: 'reamreceipts.com' },
     logo: Ream,
   },
