@@ -1,0 +1,190 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+import hero from './CC_homepage.png'
+import mobile_example from './CC_phone.png'
+import dashboard_example from './Dashboard_Example.png'
+import text_example from './CC_Text.png'
+import history_example from './CC_History.png'
+import extension_example from './CC_Extension.png'
+
+import {
+  InformationCircleIcon,
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+  ArrowTopRightOnSquareIcon,
+} from '@heroicons/react/20/solid'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-24',
+  title: 'Cross Copy',
+  description:
+    'At its core, Cross Copy provides a simple way to avoid having to email text and files to yourself. It works in a similar way to Google Drive or Dropbox, but without the bloat of folders, subscriptions, or size limits.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+At it's core, Cross Copy just provides a simple way to avoid having
+to email text and files to yourself. It works in a similar way to
+Google Drive or Dropbox, but without the bloat of folders,
+subscriptions, or size limits.
+
+<Image src={hero} alt="The Cross Copy landing page." />
+
+As with most of my projects, I built Cross Copy to overcome a
+common problem that I encountered at work. Part of my previous job
+was to create and deliver weekly (sometimes daily) reports which
+included photos of the work that had been completed on a job-site.
+Since I was using an iPhone, and my work computer was a Windows, I
+used to simply email the photos to myself. However, the 20MB limit
+on emails is quite limiting when each photo is 6MB+ each.
+Additionally, sending files/photo/url links from my personal Mac
+to my work PC was a pain.
+
+This is obviously not a new problem, and there are dozens if not
+hundreds of solutions out there already, most of which are better
+than Cross Copy and offer more features. I decided to build it
+myself, 1. because I wanted to see if I could do it, and 2.
+because I found using common services like Google Drive or Dropbox
+to be cumbersome, with honestly too many features.
+
+Cross Copy is the simplest service I have come across, a basic
+interface that works well on mobile and desktop, no storage or
+folders (files are automatically deleted after 7 days), and no
+account/subscription required. I even built a Chrome extension
+which means you don't even have to open the webpage to access your
+files.
+
+The system is broken up into 3 parts:
+
+<ul className="mt-6 space-y-6">
+  <li className="flex items-center gap-3">
+    <span>
+      <strong className="font-semibold">The Main Web App</strong> — Transfer
+      text, photos, and files directly in the browser from any device.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Mobile Application</strong> - Allows you
+      to share photos and files natively from your mobile device to Cross Copy.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Chrome Extension</strong> —
+      Instantly access copied text, files, and photos right from the Chrome
+      toolbar.
+    </span>
+  </li>
+</ul>
+
+It uses Firebase Authentication, Storage, and Firestore, which are
+accessed directly on the client side using carefully set rules.
+All of the source code is available on my <a href="https://github.com/Cedarche/CrossCopy" target="_blank">GitHub</a>.
+
+## The main web app
+
+The easiest way to use the service is to simply open the website <a href="https://crosscopy.dev/" target="_blank">crosscopy.dev</a> in a browser. Users can either choose to create an account, or continue anonymously with a linking code. They're then taken to the main homepage as seen below where they can paste text or add files.
+
+<Image src={dashboard_example} alt="The Cross Copy homepage." />
+
+Anything added to the homepage is instantly synced to their account, and is available in the browser, app, and chrome extension on any device. There is no compression or restriction on what kind of file can be transferred which is great when you need full resolution images. There is currently a limit of 200MB per file though.
+
+<div className="flex flex-col items-center justify-center">
+  <Image
+    src={mobile_example}
+    alt="An example of the Cross Copy homepage on mobile"
+    className="h-[600px] w-auto"
+  />
+</div>
+
+The text section of the application supports instant sharing of rich-text
+between devices. Any text that is typed or pasted into the window retains
+it's content, styling, and media.
+
+<div className="flex flex-row items-center justify-center gap-x-4">
+  <Image
+    src={text_example}
+    alt="An example of the Cross Copy text section."
+    className="h-[500px] w-auto rounded-sm"
+  />
+  <Image
+    src={history_example}
+    alt="An example of the Cross Copy text section."
+    className="h-[500px] w-auto rounded-sm"
+  />
+</div>
+
+Additionally, anything pasted will be stored in the History tab, so you'll
+never lose another link again.
+
+## The Mobile App
+
+The mobile application is built using React Native Expo with some native
+libraries to provide additional tools. For example <code>react-native-receive-sharing-intent</code> creates a sharing target so users can share
+photos and files directly to the app. It also uses
+
+<code>react-native-document-scanner-plugin</code> to quickly generate PDF
+documents from the camera. Whenever I need to scan a document (copies of
+licenses, passports, etc.) I almost always use Cross Copy.
+
+<div className="flex flex-col items-center justify-center">
+  <VideoPlayer src="/CC_App_Example.mp4" />
+</div>
+
+The Demo above shows a photo being shared to the Cross Copy app, which
+is then uploaded to the users cloud storage, and can be accessed from
+their browser almost immediately.
+
+Both the mobile and web applications also support peer-to-peer sharing,
+so users can quickly share photos and files with each other directly via
+QR code or link - without requiring an account.
+
+Mobile to desktop browser sharing currently works seamlessly, however
+I'm still sorting out some issues with the application before I release
+it publicly.
+
+## The Chrome Extension
+
+The Cross Copy Chrome extension is essentially a lightweight version
+of the main web application. It’s designed for users who want fast access
+to their copied files, links, and text directly from their browser,
+without needing to open a new tab or visit the website. Once installed,
+the extension sits quietly in the Chrome toolbar, ready to open with a
+single click.
+
+<div className="flex flex-col items-center justify-center">
+  <Image
+    src={extension_example}
+    alt="An example of the Cross Copy Extension"
+    className="h-auto w-[300px] rounded-sm"
+  />
+</div>
+
+Just like the main web app, the extension supports both anonymous and
+authenticated access. Users can link their browser session with the
+mobile app or another browser via a simple 4-character code, and
+anything copied or uploaded to their account becomes instantly
+accessible. It syncs in real-time, meaning files added from your
+phone will appear in the extension within seconds—no refresh required.
+
+I use the extension most often when I'm on my work laptop and need
+to quickly grab something I copied earlier on my phone—whether that’s
+a file, a block of text, or a Google Maps link. Instead of emailing
+myself or digging through AirDrop or cloud folders, I can just click
+the Cross Copy icon and it’s all there.
+
+The extension was a fun challenge to build, as it required adapting
+the entire Cross Copy experience into a compact UI that still felt
+intuitive and powerful. It supports drag and drop file uploads, and
+it's perfect for reading, copying, or downloading your recent items.
+For most daily use-cases, it’s the fastest way to get content from
+your phone to your browser, or vice versa.

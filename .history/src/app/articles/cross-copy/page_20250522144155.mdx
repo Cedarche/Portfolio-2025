@@ -1,0 +1,30 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+import hero from './CC_homepage.png'
+import mobile_example from './CC_mobile.png'
+import dashboard_example from './Dashboard_Example.png'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-24',
+  title: 'Cross Copy',
+  description:
+    'At it&apos;s core, Cross Copy provides a simple way to avoid having to email text and files to yourself. It works in a similar way to Google Drive or Dropbox, but without the bloat of folders, subscriptions, or size limits.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+At it's core, Cross Copy just provides a simple way to avoid having
+to email text and files to yourself. It works in a similar way to
+Google Drive or Dropbox, but without the bloat of folders,
+subscriptions, or size limits.
+
+<Image src={hero} alt="The Cross Copy landing page." />
+
+etc..

@@ -1,0 +1,153 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+import hero from './Snap_park_hero.png'
+import example_sticker from './Example_Sticker.png'
+import example_spot from './Example_spot.png'
+import dashboard_example from './Dashboard_Example.png'
+import billing_example from './Snappark_billing_example.png'
+import settings_example from './Snappark_settings_example.png'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-24',
+  title: 'Cross Copy',
+  description:
+    'Have you ever arrived at work, driven up multiple levels of a parking garage, only to find that all your office&apso;s allocated spots have been taken? Me too, so I decided to build a tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Snap Park is my latest and most developed endeavour, I built it to 
+solve a common problem among many companies - office parking spot 
+availability.
+
+<Image src={hero} alt="The Snap Park Landing page." />
+
+What started as a simple experiment with QR codes quickly developed 
+into 4-6 month obsession where I spent every moment outside work hours 
+developing a fully functional SaaS product - complete with detailed 
+landing page, thorough onboarding process, billing, and a functional 
+dashboard.
+
+## The Problem
+
+At my previous job we had 20 employees who drove to work, and only 6 
+available carparks in the office. However, as it was a multi-story 
+carpark, there was no way of knowing if there were still spots available 
+before driving all the way up to check. Unless you were there bright and 
+early, you enevitably found yourself frustrated, fighting your way back 
+down against oncoming traffic, only to then have to seek out some kind 
+of alternative parking (in a busy business district).
+
+While Snap Park doesnt aleviate the issue of parking spot availability, 
+it at least saves you the hassle and time of getting stuck in an 
+already full office carpark.
+
+Having just recently built Assetrix for a client at work, I was
+inspired by how easy it was to use QR codes for inventory
+management, and was looking for other ways I could utilise them.
+The premise of Snap Park is quite simple, I placed QR code
+stickers like the one below on each of our carparks:
+
+<div className="flex flex-col justify-center items-center">
+
+<Image
+  src={example_sticker}
+  alt="An example of a QR Code Sticker."
+  className="h-[400px] w-auto"
+/>
+</div>
+
+When an employee arrives at work and takes an available park, they then
+scan the adjacent code and mark it as unavailable on it's
+associated webpage.
+
+<div className="flex flex-col justify-center items-center">
+
+  <Image
+    src={example_spot}
+    alt="An example of a QR Code Sticker."
+    className="h-auto w-[300px] border border-zinc-100"
+  />
+</div>
+
+When all carparks are taken, a text message is
+sent out to all employees enrolled in the system that the work
+carpark is now full, and that they should seek alternative
+parking.
+
+At any point an employee can simply visit their company's page to quickly see which carparks are still available, and at what time each unavailable spot was taken. At midnight local time, a GCP cloud function runs that will automatically reset each parking spot back to available, ready for the next day.
+
+## The Snap Park Web Application
+
+I built an initial proof of concept for the system in my own time, then deployed it at my previous workplace. At first I didn't think much of the idea, but it was simple and effective. It was of course costing my a decent amount to send out hundreds of texts per week though, even with the cheapest available cloud messaging provider.
+
+After about 6 months I went to the company directors to try and gauge their response to the system, and whether it was worthwhile paying for. The answer from the company directors was a resounding yes, and the general response from all the employees in the office was that it genuinely provided value. So I decided to build out the prototype into a B2B service, with a dashboard, analytics, and billing/subscriptions methods.
+
+It turns out that building such a system is easy for one company, but quite difficult when trying to handle multiple companies, and support multiple offices for each company. I essentially had to start from scratch, integrating authentication, usage based billing via Stripe, and re-structuring my database to correctly protect the sensitive information of each company and their employees.
+
+<Image src={dashboard_example} alt="The Snap Park Dashboard." />
+
+The main Dashboard allows a company to add/adjust their parking spots,
+generate new QR Code stickers, add to or edit the notification list, and
+view the activity for each parking spot. A common concern I had is that
+there is theoretically nothing stopping someone from marking a parking
+spot as taken before arriving at work. I alleviated this by saving an
+employee's name and mobile number in their devices local storage, then
+sending it along side the request to mark the spot taken. This allows
+the company to see who took which spot and at which time.
+
+One of the bigger challenges I faced was consistently generating PDFs
+with dynamic QR codes that also looked good. Specifically the
+positioning of the stickers on an A4 page so they could be reliably
+printed, I didn't know this at the time but almost all printers have
+different margins that are built in and can't be changed. You can see an
+example of what I eventually came up with <a href="/QRStickersExample.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500 cursor-pointer">here</a>.
+
+<Image src={billing_example} alt="An example of the Snap Park Billing page." />
+
+The system also allows for fine tuning an office's notifications. It
+allows a company to send out text messages based on certain conditions.
+For example, a company can choose to send an notification out when their
+is only one spot remain, or when certain spots (e.g. visitors) have been
+taken.
+
+<Image
+  src={settings_example}
+  alt="An example of the Snap Park Settings page."
+/>
+
+Some might say that the features are overkill for what is essentially a
+simple notification system, but I wanted to build them early as I've got
+plans for a more broad QR tracking system in the future.
+
+## The Snap Park mobile app
+
+One of the main issues with the Snap Park system is the cost of text
+messages. Even the cheapest providers charge around $0.08 AUD/message,
+which doesn't sound like much, but when sending 3 texts per day, to 20
+individuals, adds up to quite a lot over a month. The simple solution is
+to have employees download a mobile application and link their account
+to their office. This would allow for notifications to be sent
+essentially for free, which would drastically lower both the application
+overhead, and the cost for the end user.
+
+The mobile app has essentially the exact same functionality for an
+employee as a webapp, but with a more streamlined UI/UX, and native
+app notifications rather than text messages. A demo of the app can be seen below:
+
+<div className="flex flex-col items-center justify-center">
+  <VideoPlayer src="/Snappark_App_Example.mp4" />
+</div>
+
+I reused a lot of the same styling and functionality from the Ream and
+Cross Copy applications, mostly because it's a whole lot easier than
+starting from scratch, and I think it looks good. The application
+supports login and registration through Email & Password, Google, Apple,
+and Facebook to make it as accessible as possible for users.

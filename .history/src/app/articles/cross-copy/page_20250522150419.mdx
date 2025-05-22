@@ -1,0 +1,92 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+import hero from './CC_homepage.png'
+import mobile_example from './CC_mobile.png'
+import dashboard_example from './Dashboard_Example.png'
+
+import {
+  InformationCircleIcon,
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+  ArrowTopRightOnSquareIcon,
+} from '@heroicons/react/20/solid'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-24',
+  title: 'Cross Copy',
+  description:
+    'At its core, Cross Copy provides a simple way to avoid having to email text and files to yourself. It works in a similar way to Google Drive or Dropbox, but without the bloat of folders, subscriptions, or size limits.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+At it's core, Cross Copy just provides a simple way to avoid having
+to email text and files to yourself. It works in a similar way to
+Google Drive or Dropbox, but without the bloat of folders,
+subscriptions, or size limits.
+
+<Image src={hero} alt="The Cross Copy landing page." />
+
+As with most of my projects, I built Cross Copy to overcome a
+common problem that I encountered at work. Part of my previous job
+was to create and deliver weekly (sometimes daily) reports which
+included photos of the work that had been completed on a job-site.
+Since I was using an iPhone, and my work computer was a Windows, I
+used to simply email the photos to myself. However, the 20MB limit
+on emails is quite limiting when each photo is 6MB+ each.
+Additionally, sending files/photo/url links from my personal Mac
+to my work PC was a pain.
+
+This is obviously not a new problem, and there are dozens if not
+hundreds of solutions out there already, most of which are better
+than Cross Copy and offer more features. I decided to build it
+myself, 1. because I wanted to see if I could do it, and 2.
+because I found using common services like Google Drive or Dropbox
+to be cumbersome, with honestly too many features.
+
+Cross Copy is the simplest service I have come across, a basic
+interface that works well on mobile and desktop, no storage or
+folders (files are automatically deleted after 7 days), and no
+account/subscription required. I even built a Chrome extension
+which means you don't even have to open the webpage to access your
+files.
+
+It uses Firebase Authentication, Storage, and Firestore, which are
+accessed directly on the client side using carefully set rules.
+All of the source code is available on my <a href="https://github.com/Cedarche/CrossCopy" target="_blank">GitHub</a>.
+
+<ul className="mt-8 space-y-6 text-gray-300">
+  <li className="flex items-center gap-3">
+    <CloudArrowUpIcon className="h-7 w-7 text-indigo-600" aria-hidden="true" />
+    <span>
+      <strong className="font-semibold">The Main Web App</strong> — Transfer
+      text, photos, and files directly in the browser from any device.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <CloudArrowUpIcon
+      className="h-7 w-7 text-indigo-600"
+      aria-hidden="true"
+    />
+    <span>
+      <strong className="font-semibold">The Main Web App</strong> — Transfer
+      text, photos, and files directly in the browser from any device.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <ServerIcon className="h-7 w-7 text-indigo-600" aria-hidden="true" />
+    <span>
+      <strong className="font-semibold">The Chrome Extension</strong> —
+      Instantly access copied text, files, and photos right from the Chrome
+      toolbar.
+    </span>
+  </li>
+</ul>

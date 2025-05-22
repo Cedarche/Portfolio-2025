@@ -1,0 +1,22 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-08',
+  title: 'Ream - Receipts for the 21st century',
+  description:
+    'Have you ever arrived at work, driven up multiple levels of a parking garage, only to find that all your offices allocated spots have been taken? Me too, so I decided to build a tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+This is the very first project I started back in 2019, and through
+it I've learnt to use React, React Native, Node.js, PCB design, and
+a range of accessory frameworks.
