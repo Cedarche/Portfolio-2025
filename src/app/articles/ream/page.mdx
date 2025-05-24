@@ -1,13 +1,24 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
 import { VideoPlayer } from '@/components/VideoPlayer'
 import Image from 'next/image'
+import dynamic_receipt from './Ream_dynamic_receipt.png'
+import example_receipt from './Ream_example_receipt.png'
+import hero from './Ream_hero_static.png'
+import homepage from './Ream_homepage_1.png'
+import pcb_front from './REAM_PCB_FRONT.png'
+import pcb_back from './REAM_PCB_BACK.png'
+import tile_cutaway_light from './Ream_tile_cutaway.png'
+import tile_cutaway_dark from './Ream_tile_cutaway_dark.png'
+import tile_prototype from './Ream_tile_prototype.png'
+import tile_light from './Ream_tile_whole.png'
+import tile_dark from './Ream_tile_whole_dark.png'
 
 export const article = {
   author: 'Tom Carruthers',
   date: '2025-03-08',
   title: 'Ream - Receipts for the 21st century',
   description:
-    'Have you ever arrived at work, driven up multiple levels of a parking garage, only to find that all your offices allocated spots have been taken? Me too, so I decided to build a tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
+    'This is the very first project I started back in 2019, and through it Ive learnt to use React, React Native, Node.js, PCB design, and a range of accessory frameworks.',
 }
 
 export const metadata = {
@@ -20,6 +31,8 @@ export default (props) => <ArticleLayout article={article} {...props} />
 This is the very first project I started back in 2019, and through
 it I've learnt to use React, React Native, Node.js, PCB design, and
 a range of accessory frameworks.
+
+<Image src={hero} alt="An example of the tile and a digital receipt." />
 
 The concept of Ream is simple, nobody likes paper receipts. While
 most people don't give receipts a second thought, I, like many
@@ -34,9 +47,8 @@ So I decided I would try and build a solution. My initial idea was
 some kind of middleware that would integrate with existing POS
 software and the customer's banking app to provide an interface
 for the receipt data mentioned above (I still think this is the
-best solution). However, I quickly realized that I wasn't equipped
-to handle a project with that sort of complexity, especially since
-I didn't yet know how to code.
+best solution). However, the industry integrations required for a
+system like this seemed too ambitious for a first project.
 
 My next solution was a physical device (think Square Card Reader)
 that would sit on a businesses counter top and emulate a standard
@@ -48,3 +60,80 @@ then taps the Tile with an NFC enabled mobile phone, opens the URL,
 and can view/store the digital receipt.
 
 The system I ended up building consists of 4 components:
+
+<ul className="mt-6 space-y-6">
+  <li className="flex items-center gap-3">
+    <span>
+      <strong className="font-semibold">The Main Web App</strong> - This would
+      be the starting point for users, when they first tap a Ream Tile, the
+      received URL would render their receipt in the browser as shown below.
+      There is a simple interface where users can register an account, then
+      store/retrieve their receipts.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Mobile Application</strong> - Using
+      deep linking, the same URL can instead open up the receipt in a native
+      mobile application, which provides a more fluid experience for the user.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Backend</strong> — All of the
+      receipt data received from the POS system is sent from the Tile to the
+      server via MQTT. A series of serverless AWS lambda functions then
+      store/process the data before returning a URL to the Tile.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Hardware</strong> — The Tile itself
+      is something I'm quite proud of. It's completely built from scratch, and
+      uses a custom PCB that uses an ESP32-C3 microcontroller at it's core. It
+      has built in battery management/charging, and a custom housing that can be
+      3D printed (or injection moulded).
+    </span>
+  </li>
+</ul>
+
+## The main Ream Website
+
+This was the first website I ever built, so you'll have to excuse some
+of the styling. I have refactored it over the years to use typescript,
+however much of the original code is fairly low-quality.
+
+<Image src={homepage} alt="The Ream landing page." />
+
+The website is primarily designed to be viewed on mobile, as the
+majority of the customers would access it via their digital receipt in
+order to learn more about the system. I also built a simple notification
+system that would let takeaway venues notify their customers when their
+order was ready for collection by updating the receipt, which I called
+dynamic receipts. An example of a dynamic digital receipt
+can be seen below:
+
+<div className="flex flex-col gap-y-6 sm:flex-row items-center justify-center sm:gap-x-4">
+
+  <Image
+    src={dynamic_receipt}
+    alt="An example of a dynamic receipt."
+    className=" w-[80%] sm:w-[50%] rounded-2xl"
+  />
+</div>
+
+More than a cursory view of the main website will tell you that it
+definitely needs a lot of work. However it does the job as a proof of
+concept.
+
+You can view an example receipt <a href="https://ream-1.web.app/receipt/74iUwpl0pjTt9uvva8bH" target="_blank">here</a>.
+
+## The Ream mobile app
+
+Again this was the first mobile application I built with React Native,
+so a lot of the code is very average. It was quite a challenge to build
+as a beginner, and required the use of some complicated native libraries
+such as <code>react-native-ble-plx</code> and <code>react-native-nfc-manager</code>
+as well learning the ins and outs of React Navigation's deep linking 
+schemes in order to fetch then render a digital receipt from a URL that 
+would also work without the application installed.
