@@ -1,0 +1,23 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-04-12',
+  title: 'Assetrix',
+  description:
+   'Assetrix'
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Snap Park is my latest and most developed endeavour, I built it to
+solve a common problem among many companies - office parking spot
+availability.

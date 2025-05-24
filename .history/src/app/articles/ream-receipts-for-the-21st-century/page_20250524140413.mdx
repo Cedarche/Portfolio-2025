@@ -1,0 +1,246 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import { Tile_3D } from './Tile_3D'
+import Image from 'next/image'
+import dynamic_receipt from './Ream_dynamic_receipt.png'
+import example_receipt from './Ream_example_receipt.png'
+import hero from './Ream_hero_static.png'
+import homepage from './Ream_homepage_1.png'
+import pcb_front from './REAM_PCB_FRONT.png'
+import pcb_back from './REAM_PCB_BACK.png'
+import tile_cutaway_light from './Ream_tile_cutaway.png'
+import tile_cutaway_dark from './Ream_tile_cutaway_dark.png'
+import tile_prototype from './Ream_tile_prototype.png'
+import tile_light from './Ream_tile_whole.png'
+import tile_dark from './Ream_tile_whole_dark.png'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-08',
+  title: 'Ream - Receipts for the 21st century',
+  description:
+    'This is the very first project I started back in 2019, and through it Ive learnt to use React, React Native, Node.js, PCB design, and a range of accessory frameworks.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+This is the very first project I started back in 2019, and through
+it I've learnt to use React, React Native, Node.js, PCB design, and
+a range of accessory frameworks.
+
+<Image src={hero} alt="An example of the tile and a digital receipt." />
+
+The concept of Ream is simple, nobody likes paper receipts. While
+most people don't give receipts a second thought, I, like many
+others, was required to keep a record of all purchases made
+through work so they could be expensed back. Simple bank
+transaction statements were not enough. I found it astounding that
+in 2019, there was no direct interface between the Point of Sale
+(POS) systems and the payment processing providers for receipt
+data that wasn't just the sales total.
+
+So I decided I would try and build a solution. My initial idea was
+some kind of middleware that would integrate with existing POS
+software and the customer's banking app to provide an interface
+for the receipt data mentioned above (I still think this is the
+best solution). However, the industry integrations required for a
+system like this seemed too ambitious for a first project.
+
+My next solution was a physical device (think Square Card Reader)
+that would sit on a businesses counter top and emulate a standard
+bluetooth receipt printer. When a customer made a purchase, their
+receipt would be 'printed' to the device which I named the Ream
+Tile, which would then make a request to my backend, storing all
+necessary information, and returning with a URL. The customer
+then taps the Tile with an NFC enabled mobile phone, opens the URL,
+and can view/store the digital receipt.
+
+The system I ended up building consists of 4 components:
+
+<ul className="mt-6 space-y-6">
+  <li className="flex items-center gap-3">
+    <span>
+      <strong className="font-semibold">The Main Web App</strong> - This would
+      be the starting point for users, when they first tap a Ream Tile, the
+      received URL would render their receipt in the browser as shown below.
+      There is a simple interface where users can register an account, then
+      store/retrieve their receipts.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Mobile Application</strong> - Using
+      deep linking, the same URL can instead open up the receipt in a native
+      mobile application, which provides a more fluid experience for the user.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Backend</strong> — All of the
+      receipt data received from the POS system is sent from the Tile to the
+      server via MQTT. A series of serverless AWS lambda functions then
+      store/process the data before returning a URL to the Tile.
+    </span>
+  </li>
+  <li className="flex items-center gap-4">
+    <span>
+      <strong className="font-semibold">The Hardware</strong> — The Tile itself
+      is something I'm quite proud of. It's completely built from scratch, and
+      uses a custom PCB that uses an ESP32-C3 microcontroller at it's core. It
+      has built in battery management/charging, and a custom housing that can be
+      3D printed (or injection moulded).
+    </span>
+  </li>
+</ul>
+
+## The main Ream Website
+
+This was the first website I ever built, so you'll have to excuse some
+of the styling. I have refactored it over the years to use typescript,
+however much of the original code is fairly low-quality.
+
+<Image src={homepage} alt="The Ream landing page." />
+
+The website is primarily designed to be viewed on mobile, as the
+majority of the customers would access it via their digital receipt in
+order to learn more about the system. I also built a simple notification
+system that would let takeaway venues notify their customers when their
+order was ready for collection by updating the receipt, which I called
+dynamic receipts. An example of a dynamic digital receipt
+can be seen below:
+
+<div className="flex flex-col gap-y-6 sm:flex-row items-center justify-center sm:gap-x-4">
+
+  <Image
+    src={dynamic_receipt}
+    alt="An example of a dynamic receipt."
+    className=" w-[80%] sm:w-[50%] rounded-2xl"
+  />
+</div>
+
+More than a cursory view of the main website will tell you that it
+definitely needs a lot of work. However it does the job as a proof of
+concept.
+
+You can view an example receipt <a href="https://ream-1.web.app/receipt/74iUwpl0pjTt9uvva8bH" target="_blank">here</a>.
+
+## The Ream mobile app
+
+Again this was the first mobile application I built with React Native,
+so a lot of the code is very average. It was quite a challenge to build
+as a beginner, and required the use of some complicated native libraries
+such as <code>react-native-ble-plx</code> and <code>react-native-nfc-manager</code>
+as well learning the ins and outs of React Navigation's deep linking
+schemes in order to fetch then render a digital receipt from a URL that
+would also work without the application installed.
+
+<div className="flex flex-col items-center justify-center">
+  <VideoPlayer src="/Ream_App_Example.mp4" />
+</div>
+
+The application supports login and registration through Email &
+Password, Google, Apple, and Facebook to make it as accessible as
+possible for users. When a customer that has the App installed taps
+their phone to a Ream Tile, they're redirected to the app where the receipt
+is automatically stored for future use.
+
+## The Ream Tile
+
+The Tile is simultaneously the most difficult and most rewarding
+thing I've ever built. I designed then built every aspect of it from
+the ground up, including the housing, circuitry/PCB, and firmware.
+For testing and iteration purposes the housing is 3D printed out of
+ABS, but I designed it with injection moulding in mind. As a
+mechanical engineer this is the one part of the device that I was
+already familiar with.
+
+<div className="flex h-[500px] flex-col items-center justify-center rounded-2xl border border-zinc-100 dark:border-zinc-600">
+  <Tile_3D />
+</div>
+
+At the time of it's construction there were no development boards
+available that had the features I needed, so I decided to build my own
+custom PCB. I just needed to learn some basic circuit & PCB design,
+source the correct components, have the boards manufactured, solder
+the ICs, and learn basic C++ and write some firmware - how hard can it
+be right?
+
+Six months and around 50 expensive prototypes later I finally landed
+on a working design. The core of the system is the Dynamic NFC chip,
+which allows you to programmatically store and change the data it
+displays. This requires a correctly tuned PCB antenna so that standard
+mobile devices can correctly interpret the NFC signal. To control the
+IC I use an ESP32-C3 which has WiFi & BLE baked in. Then to power the
+whole system I have a LiPo battery and a charge/protection circuit
+with a USB-C port.
+
+<div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
+  <Image
+    src={pcb_front}
+    alt="The Tile PCB front."
+    className="h-[350px] w-auto rounded-2xl"
+  />
+  <Image
+    src={pcb_back}
+    alt="The Tile PCB back with PCB antenna."
+    className="h-[350px] w-auto rounded-2xl"
+  />
+</div>
+
+After sorting through issue after issue figuring out the integration
+between the housing, PCB, and battery management, I needed to write
+the firmware for the device. I won't go into too much detail on this
+but it's written in C++ using the ESP-IDF framework specifically
+designed for Espressif microcontrollers.
+
+The firmware includes support for both BLE and WiFi, and can
+present a receipt URL via either method. When using Bluetooth, the
+device provides a GATT Server service which a mobile application can
+send data to - a digital receipt URL in this case. When using WiFi,
+the device connects to the internet via a local network, then
+subscribes to a specific AWS IoT MQTT topic. When a digital receipt is
+created by the POS software via the Ream API, it pushes the resulting
+receipt URL out to the specified Tile.
+
+After months of integration hell I finally had a fully working system.
+You can see an x-ray view of the Tile below, as well as some
+functioning prototypes.
+
+<Image src={tile_cutaway_dark} alt="An x-ray view of the tile." />
+<Image src={tile_prototype} alt="Some prototypes of the tile." />
+
+## The Ream API
+
+The Ream backend API is the start point of any digital receipt. Once
+an in-store order has been placed, the POS system will send a POST
+request to the Public API endpoint with the details of the receipt and
+their API Key. The server sanitizes, formats, then stores the receipt data
+securely within the database, then responds with a publicly available URL.
+If the store is using a Tile in it's WiFi configuration, then this URL is
+sent directly to the Tile via MQTT - otherwise it will be sent over BLE/USB.
+
+The Ream backend API is written in Typescript using the Node.js
+Express framework. It's hosted on multiple AWS Lambda instances for
+simplicity and scalability using <code>aws-serverless-express</code>.
+It includes external endpoints that handle actions such as receipt
+generation, device (Ream Tile) registration, API Key requests etc. as
+well as dozens of internal endpoints.
+
+```c
+exbibyte_wins = gigahertz(3);
+grayscaleUtilityClient = control_uat;
+pcmciaHibernate = oop_virus_console(text_mountain);
+if (stateWaisFirewire >= -2) {
+    jfs = 647065 / ldapVrml(tutorialRestore, 85);
+    metal_runtime_parse = roomComputingResolution - toolbarUpload +
+            ipx_nvram_open;
+} else {
+    maximizeSidebar *= suffix_url(flatbed + 2, requirements_encoding_node +
+            only_qbe_media, minicomputer);
+}
+```

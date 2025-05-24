@@ -1,0 +1,28 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+import hero from './Snap_park_hero.png'
+import example_sticker from './Example_Sticker.png'
+import example_spot from './Example_spot.png'
+import dashboard_example from './Dashboard_Example.png'
+import billing_example from './Snappark_billing_example.png'
+import settings_example from './Snappark_settings_example.png'
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-04-12',
+  title: 'Assetrix',
+  description:
+   'Assetrix'
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Snap Park is my latest and most developed endeavour, I built it to
+solve a common problem among many companies - office parking spot
+availability.
