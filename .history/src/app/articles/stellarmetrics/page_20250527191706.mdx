@@ -1,0 +1,24 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { VideoPlayer } from '@/components/VideoPlayer'
+import Image from 'next/image'
+
+
+export const article = {
+  author: 'Tom Carruthers',
+  date: '2025-03-11',
+  title: 'Stellarmetrics',
+  description:
+    'An internal asset tracking system that uses QR Codes to track the location, P&ID, ISO number for industrial equipment. It was built specifically for a client at my previous job in order to keep track of the decomissioning of a complex gas compressor station and is still in use today.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Assetrix is really just a simple QR code asset management
+application, which is not a new idea by any stretch. However, I was
+somewhat forced to build it out of necessity at my previous job.
+
