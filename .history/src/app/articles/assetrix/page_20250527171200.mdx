@@ -6,10 +6,11 @@ import Assetrix_2 from './Assetrix_2.jpeg'
 import AssetrixQR1 from './Assetrix_QRCodes_1.jpeg'
 import AssetrixQR2 from './Assetrix_QRCodes_2.jpeg'
 
+
 export const article = {
   author: 'Tom Carruthers',
   date: '2025-03-11',
-  title: 'Assetrix - Custom Asset tracking software',
+  title: 'Assetrix',
   description:
     'An internal asset tracking system that uses QR Codes to track the location, P&ID, ISO number for industrial equipment. It was built specifically for a client at my previous job in order to keep track of the decomissioning of a complex gas compressor station and is still in use today.',
 }
@@ -25,9 +26,8 @@ Assetrix is really just a simple QR code asset management
 application, which is not a new idea by any stretch. However, I was
 somewhat forced to build it out of necessity at my previous job.
 
-<div className="flex flex-col items-center justify-center">
-  <VideoPlayer src="/Assetrix_App_Example.mp4" />
-</div>
+<Image src={Assetrix_1} alt="An example of the tile and a digital receipt." />
+<Image src={Assetrix_2} alt="An example of the tile and a digital receipt." />
 
 One of our primary clients had been in discussions with a major
 power company to purchase a decommissioned gas compressor station
@@ -64,56 +64,7 @@ application using react-native that would allow us to quickly
 input the required information. I wanted it to be accessible as a
 native mobile application, as well as from the browser. This
 turned out to be overkill, and a simple web application would have
-worked fine, but hindsight is 20-20.
+worked fine, but hindsight is 2020.
 
-<div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
-  <Image
-    src={Assetrix_1}
-    alt="An example of separating equipment into super structures"
-    className="h-[600px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
-  />
-  <Image
-    src={Assetrix_2}
-    alt="An example of an asset page"
-    className="h-[600px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
-  />
-</div>
-
-On Monday the next week, myself and another engineer from the team
-flew out to site and spent the next 3 weeks meticulously going
-through the original plans and marking every relevant piece of
-equipment on the site.
-
-We divided the compressor station into super structures
-(Compressor 1, TEG Unit, Flare, etc.) and assigned each of these a
-color. When placing a QR code sticker, we also placed a dot of
-spray paint that corresponded with the relevant section. As the
-plant was being disassembled and temporarily placed in a laydown
-yard for storage, we wanted to make sure that all related pieces
-were placed in the same spot. Of course it isn't that simple, with
-multiple systems being interconnected which you can see in the
-Inventory page example above, where the super structures often
-have 2 or more colours attached to them.
-
-<div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
-  <Image
-    src={AssetrixQR1}
-    alt="An example of a QR code sticker on a piece of equipment."
-    className="h-[400px] w-auto rounded-2xl shadow-lg"
-  />
-  <Image
-    src={AssetrixQR2}
-    alt="A second example of a QR code sticker on a piece of equipment."
-    className="h-[400px] w-auto rounded-2xl shadow-lg"
-  />
-</div>
-
-We used heavy duty all-weather stickers for the QR codes with the
-intent that when the compressor station is reconstructed in Q4
-2024, the engineers and construction crew will be able to scan a
-piece of equipment, and know exactly where it is meant to go.
-
-The app is still in regular use at my previous company to help
-organise equipment refurbishment. I haven't made either the code
-or the app itself public as it is technically not my property -
-being built on company time.
+<Image src={AssetrixQR1} alt="An example of the tile and a digital receipt." />
+<Image src={AssetrixQR2} alt="An example of the tile and a digital receipt." />

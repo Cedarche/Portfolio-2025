@@ -9,7 +9,7 @@ import AssetrixQR2 from './Assetrix_QRCodes_2.jpeg'
 export const article = {
   author: 'Tom Carruthers',
   date: '2025-03-11',
-  title: 'Assetrix - Custom Asset tracking software',
+  title: 'Assetrix',
   description:
     'An internal asset tracking system that uses QR Codes to track the location, P&ID, ISO number for industrial equipment. It was built specifically for a client at my previous job in order to keep track of the decomissioning of a complex gas compressor station and is still in use today.',
 }
@@ -64,18 +64,18 @@ application using react-native that would allow us to quickly
 input the required information. I wanted it to be accessible as a
 native mobile application, as well as from the browser. This
 turned out to be overkill, and a simple web application would have
-worked fine, but hindsight is 20-20.
+worked fine, but hindsight is 2020.
 
 <div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
   <Image
     src={Assetrix_1}
-    alt="An example of separating equipment into super structures"
-    className="h-[600px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
+    alt="The Tile PCB front."
+    className="h-[550px] w-auto rounded-2xl border border-zinc-100"
   />
   <Image
     src={Assetrix_2}
-    alt="An example of an asset page"
-    className="h-[600px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
+    alt="The Tile PCB back with PCB antenna."
+    className="h-[550px] w-auto rounded-2xl border border-zinc-100"
   />
 </div>
 
@@ -90,7 +90,7 @@ color. When placing a QR code sticker, we also placed a dot of
 spray paint that corresponded with the relevant section. As the
 plant was being disassembled and temporarily placed in a laydown
 yard for storage, we wanted to make sure that all related pieces
-were placed in the same spot. Of course it isn't that simple, with
+were placed in the same spot. Of course it isn't that simply, with
 multiple systems being interconnected which you can see in the
 Inventory page example above, where the super structures often
 have 2 or more colours attached to them.
@@ -98,13 +98,13 @@ have 2 or more colours attached to them.
 <div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
   <Image
     src={AssetrixQR1}
-    alt="An example of a QR code sticker on a piece of equipment."
-    className="h-[400px] w-auto rounded-2xl shadow-lg"
+    alt="The Tile PCB front."
+    className="h-[500px] w-auto rounded-2xl"
   />
   <Image
     src={AssetrixQR2}
-    alt="A second example of a QR code sticker on a piece of equipment."
-    className="h-[400px] w-auto rounded-2xl shadow-lg"
+    alt="The Tile PCB back with PCB antenna."
+    className="h-[500px] w-auto rounded-2xl"
   />
 </div>
 
