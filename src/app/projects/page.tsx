@@ -6,7 +6,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { projects } from '@/components/Constants'
 import { TechnologiesScroll } from '@/components/TechnologiesScroll'
-
+import { GitHubIcon } from '@/components/SocialIcons'
 function ArticleIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
@@ -46,7 +46,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Things I've made trying to put my dent in the universe."
-      intro="I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      intro="I've worked on tons of little projects over the years but these are the ones that I'm most proud of. You can see some of the other things I've built over on my GitHub."
     >
       <ul
         role="list"
@@ -73,16 +73,29 @@ export default function Projects() {
               wrapOnDesktop={true}
             />
             <div className="mt-6 flex flex-col gap-4">
-              {project.link.label && (
-                <a
-                  href={project.link.href}
-                  target="_blank"
-                  className="relative z-10 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
-                >
-                  <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{project.link.label}</span>
-                </a>
-              )}
+              <div className='flex items-center gap-4'>
+                {project.link.label && (
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    className="relative z-10 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
+                  >
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">{project.link.label}</span>
+                  </a>
+                )}
+
+                {project.link.github && (
+                  <a
+                    href={project.link.github}
+                    target="_blank"
+                    className="relative z-10 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
+                  >
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">Github</span>
+                  </a>
+                )}
+              </div>
 
               <Link
                 href={`/articles/${project.link.article}`}

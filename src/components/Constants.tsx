@@ -63,6 +63,7 @@ export const projects = [
     link: {
       href: 'https://snappark.co',
       label: 'snappark.co',
+      github: 'https://github.com/Cedarche/SnapPark',
       article: 'snap-park-a-complex-solution-to-a-simple-problem',
     },
     stack: [
@@ -104,6 +105,7 @@ export const projects = [
     link: {
       href: 'https://crosscopy.dev',
       label: 'crosscopy.dev',
+      github: 'https://github.com/Cedarche/CrossCopy',
       article: 'cross-copy-simple-cross-platform-media-sharing',
     },
     stack: [
