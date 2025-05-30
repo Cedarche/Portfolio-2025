@@ -183,7 +183,14 @@ export const technologies = [
     description:
       "I first started learning React in 2019, right before Covid and the 16.8.0 Hooks update. Then I built my first React Native application in early 2021. I've also gained a solid knowledge of HTML/CSS at the same time.",
     icon: 'React',
-    experience: '4+',
+    experience: '5',
+  },
+  {
+    name: 'NextJS',
+    description:
+      "I've been learning NextJS over the past year, starting with a task management dashboard demo and then building this portfolio site. I've gained experience with its core features like server components, routing, and deployment to Vercel.",
+    icon: 'NextJS',
+    experience: '1+',
   },
   {
     name: 'Node.js',
@@ -211,7 +218,7 @@ export const technologies = [
     description:
       'I have some experience using the Google Cloud Platform directly outside of the Firebase framework, including Cloud Run, Cloud Functions, Compute Engine, and Cloud Storage.',
     icon: 'GCP',
-    experience: '1',
+    experience: '2',
   },
 ]
 

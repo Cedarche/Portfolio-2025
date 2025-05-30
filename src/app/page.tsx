@@ -260,7 +260,7 @@ export default async function Home() {
                 aria-label="Follow on LinkedIn"
                 icon={LinkedInIcon}
               />
-              <Button href="#" variant="secondary" className="group">
+              <Button href="/TC_FULLSTACK_RESUME_2025.pdf" target="_blank" variant="secondary" className="group">
                 Download CV
                 <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
               </Button>

@@ -15,11 +15,6 @@ import { Input } from '@/components/catalyst/input'
 
 import { Textarea } from '@/components/catalyst/textarea'
 
-const metadata = {
-  title: 'Contact',
-  description: 'Contact me',
-}
-
 export default function Contact() {
   const [status, setStatus] = useState<
     'idle' | 'loading' | 'success' | 'error'
