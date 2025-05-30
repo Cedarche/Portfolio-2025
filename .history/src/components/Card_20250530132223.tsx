@@ -41,6 +41,7 @@ Card.Link = function CardLink({
     <>
       <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
       <Link {...props}>
+        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
       </Link>
     </>
@@ -78,18 +79,16 @@ Card.Description = function CardDescription({
 
 Card.Cta = function CardCta({
   children,
-  className,
+  props,
 }: {
   children: React.ReactNode
-  className?: string
+  props: string
 }) {
   return (
     <div
       aria-hidden="true"
-      className={clsx(
-        'relative z-10 flex items-center text-sm font-medium text-blue-500',
-        className,
-      )}
+      className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500"
+      {...props}
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />

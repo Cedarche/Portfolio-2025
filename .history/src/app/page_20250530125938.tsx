@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -21,7 +21,7 @@ import { Badge } from '@/components/catalyst/badge'
 import { technologies, education } from '@/components/Constants'
 import { GridPattern } from '@/components/GridPattern'
 import avatarImage from '@/images/Headshot-nobg.png'
-import { TechnologiesScroll } from '@/components/TechnologiesScroll'
+import TechnologiesScroll from '@/components/TechnologiesScroll'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -97,7 +97,7 @@ function SocialLink({
 
 function Education() {
   return (
-    <div className="rounded-2xl border shadow-md border-zinc-100 p-6 dark:border-zinc-700/60 bg-zinc-50 dark:bg-zinc-800/80">
+    <div className="rounded-2xl border border-zinc-100 bg-zinc-50 p-6 shadow-md dark:border-zinc-700/60 dark:bg-zinc-800/80">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <AcademicCapIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
         <span className="ml-3">Education</span>
@@ -146,14 +146,18 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="rounded-2xl border shadow-md border-zinc-100 p-6 dark:border-zinc-700/60 bg-zinc-50 dark:bg-zinc-800/80"
+      className="rounded-2xl border border-zinc-100 bg-zinc-50 p-6 shadow-md dark:border-zinc-700/60 dark:bg-zinc-800/80"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Interested in working together?</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Enter your email and I&apos;ll get back to you as soon as possible. Or <a href='https://tomcarruthers.com/contact' className='text-blue-500'>send me a message</a> with more info.
+        Enter your email and I&apos;ll get back to you as soon as possible. Or{' '}
+        <a href="https://tomcarruthers.com/contact" className="text-blue-500">
+          send me a message
+        </a>{' '}
+        with more info.
       </p>
       <div className="mt-6 flex">
         <input
@@ -216,25 +220,22 @@ function Role({ role }: { role: Role }) {
   )
 }
 
-
-
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
 
   return (
     <>
-
       <Container className="mt-10 md:mt-28">
         <div className="flex flex-col gap-8 lg:flex-row">
-          <div className="aspect-square w-full rounded-2xl border shadow-lg border-zinc-200  lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 bg-zinc-100 dark:bg-zinc-800">
+          <div className="aspect-square w-full rounded-2xl border border-zinc-200 bg-zinc-100 shadow-lg lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 dark:bg-zinc-800">
             <Image
               src={avatarImage}
               alt="Tom Carruthers"
-              className="h-full w-full rounded-2xl object-cover "
+              className="h-full w-full rounded-2xl object-cover"
               priority
             />
           </div>
-          <div className="w-full lg:w-3/4 overflow-hidden sm:overflow-visible">
+          <div className="w-full overflow-hidden sm:overflow-visible lg:w-3/4">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
               Hi, I&apos;m Tom
             </h1>
@@ -246,17 +247,17 @@ export default async function Home() {
               currently looking for work in London, UK as a front-end/fullstack
               software engineer.
             </p>
-            <TechnologiesScroll items={technologies} showTooltip={true}/>
+            <TechnologiesScroll items={technologies} showTooltip={true} />
             <div className="mt-6 flex items-center justify-end gap-6 md:justify-start">
               <SocialLink
                 href="https://github.com/Cedarche"
-                target='_blank'
+                target="_blank"
                 aria-label="Follow on GitHub"
                 icon={GitHubIcon}
               />
               <SocialLink
                 href="https://www.linkedin.com/in/tom-carruthers-1b8709184/"
-                target='_blank'
+                target="_blank"
                 aria-label="Follow on LinkedIn"
                 icon={LinkedInIcon}
               />

@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'

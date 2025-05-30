@@ -3,14 +3,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Badge } from '@/components/catalyst/badge'
-import { SiTypescript, SiJavascript, SiTailwindcss, SiStyledcomponents, SiGooglecloud } from 'react-icons/si'
-import { FaReact, FaPython, FaNodeJs, FaAws } from 'react-icons/fa'
-import { CgCPlusPlus } from 'react-icons/cg'
-import { IoLogoFirebase } from 'react-icons/io5'
+import { technologies } from '@/components/Constants'
 
 interface TechItem {
   name: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }>
   description?: string
   experience?: string
 }
@@ -19,22 +16,6 @@ interface TechScrollProps {
   items: TechItem[]
   showTooltip?: boolean
   className?: string
-  wrapOnDesktop?: boolean
-}
-
-const iconMap = {
-  'Typescript': SiTypescript,
-  'Javascript': SiJavascript,
-  'Python': FaPython,
-  'C++': CgCPlusPlus,
-  'React': FaReact,
-  'React Native': FaReact,
-  'Node.js': FaNodeJs,
-  'Firebase': IoLogoFirebase,
-  'AWS': FaAws,
-  'GCP': SiGooglecloud,
-  'Tailwind': SiTailwindcss,
-  'Styled Components': SiStyledcomponents,
 }
 
 function useMediaQuery(query: string) {
@@ -90,7 +71,6 @@ function TechnologyBadge({ feature, showTooltip }: { feature: TechItem; showTool
   const [isHovered, setIsHovered] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const badgeRef = useRef<HTMLDivElement>(null)
-  const Icon = iconMap[feature.icon as keyof typeof iconMap]
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
@@ -111,7 +91,7 @@ function TechnologyBadge({ feature, showTooltip }: { feature: TechItem; showTool
       onMouseLeave={handleMouseLeave}
     >
       <Badge color="blue" className="flex-shrink-0 cursor-pointer py-1">
-        <Icon className="h-4 w-4 text-blue-500" />
+        <feature.icon className="h-4 w-4 text-blue-500" />
         {feature.name}
       </Badge>
       {showTooltip && (
@@ -128,7 +108,7 @@ function TechnologyBadge({ feature, showTooltip }: { feature: TechItem; showTool
   )
 }
 
-export function TechnologiesScroll({ items, showTooltip = true, className = '', wrapOnDesktop = false }: TechScrollProps) {
+export function TechnologiesScroll({ items, showTooltip = true, className = '' }: TechScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState(0)
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -139,20 +119,8 @@ export function TechnologiesScroll({ items, showTooltip = true, className = '', 
     }
   }, [])
 
-  if (wrapOnDesktop) {
-    return (
-      <div className={`relative ${className}`}>
-        <div className="flex flex-wrap gap-2">
-          {items.map((feature) => (
-            <TechnologyBadge key={feature.name} feature={feature} showTooltip={showTooltip} />
-          ))}
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className={`relative mt-6 w-full overflow-hidden ${className}`}>
+    <div className={`relative mt-6 w-full ${className}`}>
       <motion.div
         ref={containerRef}
         className="flex whitespace-nowrap"

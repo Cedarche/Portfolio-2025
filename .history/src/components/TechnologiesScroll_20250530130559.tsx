@@ -19,7 +19,6 @@ interface TechScrollProps {
   items: TechItem[]
   showTooltip?: boolean
   className?: string
-  wrapOnDesktop?: boolean
 }
 
 const iconMap = {
@@ -128,7 +127,7 @@ function TechnologyBadge({ feature, showTooltip }: { feature: TechItem; showTool
   )
 }
 
-export function TechnologiesScroll({ items, showTooltip = true, className = '', wrapOnDesktop = false }: TechScrollProps) {
+export function TechnologiesScroll({ items, showTooltip = true, className = '' }: TechScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState(0)
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -139,20 +138,8 @@ export function TechnologiesScroll({ items, showTooltip = true, className = '', 
     }
   }, [])
 
-  if (wrapOnDesktop) {
-    return (
-      <div className={`relative ${className}`}>
-        <div className="flex flex-wrap gap-2">
-          {items.map((feature) => (
-            <TechnologyBadge key={feature.name} feature={feature} showTooltip={showTooltip} />
-          ))}
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className={`relative mt-6 w-full overflow-hidden ${className}`}>
+    <div className={`relative mt-6 w-full ${className}`}>
       <motion.div
         ref={containerRef}
         className="flex whitespace-nowrap"

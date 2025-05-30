@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -153,7 +153,7 @@ function Newsletter() {
         <span className="ml-3">Interested in working together?</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Enter your email and I&apos;ll get back to you as soon as possible. Or <a href='https://tomcarruthers.com/contact' className='text-blue-500'>send me a message</a> with more info.
+        Enter your email and I&apos;ll get back to you as soon as possible.
       </p>
       <div className="mt-6 flex">
         <input
@@ -246,17 +246,15 @@ export default async function Home() {
               currently looking for work in London, UK as a front-end/fullstack
               software engineer.
             </p>
-            <TechnologiesScroll items={technologies} showTooltip={true}/>
+            <TechnologiesScroll />
             <div className="mt-6 flex items-center justify-end gap-6 md:justify-start">
               <SocialLink
-                href="https://github.com/Cedarche"
-                target='_blank'
+                href="#"
                 aria-label="Follow on GitHub"
                 icon={GitHubIcon}
               />
               <SocialLink
-                href="https://www.linkedin.com/in/tom-carruthers-1b8709184/"
-                target='_blank'
+                href="#"
                 aria-label="Follow on LinkedIn"
                 icon={LinkedInIcon}
               />

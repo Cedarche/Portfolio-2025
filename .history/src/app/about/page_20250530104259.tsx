@@ -10,7 +10,7 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/Headshot-nobg.png'
+import portraitImage from '@/images/portrait.jpg'
 
 function SocialLink({
   className,
@@ -69,16 +69,17 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Im a mechanical engineer/software developer living in London.
+            I’m Tom Carruthers. Im a mechanical engineer/software developer
+            living in London.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m a hardworking mechanical engineer with 5+ years of
-              experience in the Natural Gas industry as a project manager, and
-              6+ years of part-time experience in the construction industry.
-              I&apos;ve recently moved to London and I&apos;m looking to change
-              careers into software engineering as that&apos;s where my passion
-              really lies.
+              I'm a hardworking mechanical engineer with 5+ years of experience
+              in the Natural Gas industry as a project manager, and 6+ years of
+              part-time experience in the construction industry. I&apos;ve
+              recently moved to London and I&apos;m looking to change careers
+              into software engineering as that&apos;s where my passion really
+              lies.
             </p>
             <p>
               Over the past 5 years I&apos;ve spent much of my spare time
@@ -87,14 +88,26 @@ export default function About() {
               mechanical roles, I&apos;m hoping my portfolio of
               React/React-Native projects might be enough to convince you.
             </p>
+            <p>
+              Today, I’m the founder of Planetaria, where we’re working on
+              civilian space suits and manned shuttle kits you can assemble at
+              home so that the next generation of kids really <em>can</em> make
+              it to orbit — from the comfort of their own backyards.
+            </p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://github.com/Cedarche" icon={GitHubIcon} className="mt-4">
+            <SocialLink href="#" icon={XIcon}>
+              Follow on X
+            </SocialLink>
+            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+              Follow on Instagram
+            </SocialLink>
+            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/tom-carruthers-1b8709184/" icon={LinkedInIcon} className="mt-4">
+            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
               Follow on LinkedIn
             </SocialLink>
             <SocialLink

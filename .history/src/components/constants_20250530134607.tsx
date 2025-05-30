@@ -122,7 +122,7 @@ export const projects = [
       'A custom internal asset tracking tool that uses QR Codes to track the location, P&ID, ISO number for industrial equipment.',
     link: {
       href: '#',
-
+      label: 'github.com',
       article: 'assetrix-custom-asset-tracking-software',
     },
     stack: [

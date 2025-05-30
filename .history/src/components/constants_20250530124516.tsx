@@ -1,5 +1,14 @@
+import logoAnimaginary from '@/images/logos/animaginary.svg'
+import logoCosmos from '@/images/logos/cosmos.svg'
+import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
+import logoPlanetaria from '@/images/logos/planetaria.svg'
 import UQLogo from '@/images/UQLogo2.png'
+import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa'
+import { SiTypescript, SiGooglecloud, SiStyledcomponents, SiTailwindcss, SiJavascript } from 'react-icons/si'
+import { IoLogoFirebase } from 'react-icons/io5'
+import { CgCPlusPlus } from 'react-icons/cg'
+
 
 // App icon imports
 import Snappark from '@/images/logos/Snappark.png'
@@ -60,19 +69,15 @@ export const projects = [
     name: 'Snap Park',
     description:
       'A management tool to help companies keep track of their parking spaces, and to notify employees when the office is full.',
-    link: {
-      href: 'https://snappark.co',
-      label: 'snappark.co',
-      article: 'snap-park-a-complex-solution-to-a-simple-problem',
-    },
+    link: { href: 'https://snappark.co', label: 'snappark.co' },
     stack: [
-      { name: 'Typescript', icon: 'Typescript' },
-      { name: 'React', icon: 'React' },
-      { name: 'React Native', icon: 'React Native' },
-      { name: 'Node.js', icon: 'Node.js' },
-      { name: 'GCP', icon: 'GCP' },
-      { name: 'Firebase', icon: 'Firebase' },
-      { name: 'Tailwind', icon: 'Tailwind' },
+      { name: "Typescript", icon: SiTypescript },
+      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "React", icon: FaReact },
+      { name: "React Native", icon: FaReact },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "GCP", icon: SiGooglecloud },
+      { name: "Firebase", icon: IoLogoFirebase },
     ],
     logo: Snappark,
   },
@@ -80,20 +85,16 @@ export const projects = [
     name: 'Ream',
     description:
       'An end-to-end digital receipt system aimed for enterprise and consumer applications that utilizes custom BLE/IoT and dynamic NFC electronics.',
-    link: {
-      href: 'https://reamreceipts.com/',
-      label: 'reamreceipts.com',
-      article: 'ream-receipts-for-the-21st-century',
-    },
+    link: { href: 'https://reamreceipts.com/', label: 'reamreceipts.com' },
     stack: [
-      { name: 'Typescript', icon: 'Typescript' },
-      { name: 'C++', icon: 'C++' },
-      { name: 'React', icon: 'React' },
-      { name: 'React Native', icon: 'React Native' },
-      { name: 'Styled Components', icon: 'Styled Components' },
-      { name: 'Node.js', icon: 'Node.js' },
-      { name: 'AWS', icon: 'AWS' },
-      { name: 'Firebase', icon: 'Firebase' },
+      { name: "Typescript", icon: SiTypescript },
+      { name: "C++", icon: CgCPlusPlus },
+      { name: "React", icon: FaReact },
+      { name: "React Native", icon: FaReact },
+      { name: "Styled Components", icon: SiStyledcomponents },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "AWS", icon: FaAws },
+      { name: "Firebase", icon: IoLogoFirebase },
     ],
     logo: Ream,
   },
@@ -101,18 +102,14 @@ export const projects = [
     name: 'Cross Copy',
     description:
       'A simply cross-platform file transfer service that just works - without the hassle or complexity of Dropbox or Google Drive. ',
-    link: {
-      href: 'https://crosscopy.dev',
-      label: 'crosscopy.dev',
-      article: 'cross-copy-simple-cross-platform-media-sharing',
-    },
+    link: { href: 'https://crosscopy.dev', label: 'crosscopy.dev' },
     stack: [
-      { name: 'Javascript', icon: 'Javascript' },
-      { name: 'Node.js', icon: 'Node.js' },
-      { name: 'React', icon: 'React' },
-      { name: 'React Native', icon: 'React Native' },
-      { name: 'Styled Components', icon: 'Styled Components' },
-      { name: 'Firebase', icon: 'Firebase' },
+      { name: "Javascript", icon: SiJavascript },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "React", icon: FaReact },
+      { name: "React Native", icon: FaReact },
+      { name: "Styled Components", icon: SiStyledcomponents },
+      { name: "Firebase", icon: IoLogoFirebase },
     ],
     logo: Crosscopy,
   },
@@ -120,15 +117,11 @@ export const projects = [
     name: 'Assetrix',
     description:
       'A custom internal asset tracking tool that uses QR Codes to track the location, P&ID, ISO number for industrial equipment.',
-    link: {
-      href: '#',
-
-      article: 'assetrix-custom-asset-tracking-software',
-    },
+    link: { href: '#', label: 'github.com' },
     stack: [
-      { name: 'Typescript', icon: 'Typescript' },
-      { name: 'React Native', icon: 'React Native' },
-      { name: 'Firebase', icon: 'Firebase' },
+      { name: "Typescript", icon: SiTypescript },
+      { name: "React Native", icon: FaReact },
+      { name: "Firebase", icon: IoLogoFirebase },
     ],
     logo: Assetrix,
   },
@@ -136,19 +129,15 @@ export const projects = [
     name: 'Stellarmetrics',
     description:
       'A remote monitoring solution for assets in rural areas, it utilises the SWARM satellite network to send small packets of data (tank water levels, pressure readings, etc.)',
-    link: {
-      href: '#',
-
-      article: 'stellarmetrics-remote-asset-monitoring-using-satellites',
-    },
+    link: { href: '#', label: 'github.com' },
     stack: [
-      { name: 'Typescript', icon: 'Typescript' },
-      { name: 'Styled Components', icon: 'Styled Components' },
-      { name: 'C++', icon: 'C++' },
-      { name: 'React', icon: 'React' },
-      { name: 'Node.js', icon: 'Node.js' },
-      { name: 'AWS', icon: 'AWS' },
-      { name: 'Firebase', icon: 'Firebase' },
+      { name: "Typescript", icon: SiTypescript },
+      { name: "Styled Components", icon: SiStyledcomponents },
+      { name: "C++", icon: CgCPlusPlus },
+      { name: "React", icon: FaReact },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "AWS", icon: FaAws },
+      { name: "Firebase", icon: IoLogoFirebase },
     ],
     logo: logoOpenShuttle,
   },
@@ -159,56 +148,57 @@ export const technologies = [
     name: 'Typescript',
     description:
       'Like most people I started off learning the basics of Javascript, before diving into React/React Native, then switched to Typescript for most projects.',
-    icon: 'Typescript',
+    icon: SiTypescript,
     experience: '4+',
   },
   {
     name: 'Python',
     description:
       "Python was the first language I learnt during university, and I have used it extensively at my previous workplace for manipulating large datasets with pandas and numpy. It's my go to when I need to manipulate files/images within my OS. However, it has been a few years since I have used it for any major projects.",
-    icon: 'Python',
+    icon: FaPython,
     experience: '4+',
   },
   {
     name: 'C++',
     description:
       'I have a basic understanding of C++ programming structures, and primarily use it for IoT programming using STM32, ESP32, and Arduino microcrontrollers.',
-    icon: 'C++',
+    icon: CgCPlusPlus,
     experience: '1',
   },
   {
     name: 'React',
     description:
       "I first started learning React in 2019, right before Covid and the 16.8.0 Hooks update. Then I built my first React Native application in early 2021. I've also gained a solid knowledge of HTML/CSS at the same time.",
-    icon: 'React',
+    icon: FaReact,
     experience: '4+',
   },
   {
     name: 'Node.js',
     description:
       'Node.js, and specifically Express.js, was the first backend framework I learnt along side React. I have experience with MongoDB, node-postgres (PostgreSQL). I have recently been teaching myself how to use GraphQL to interact with APIs more efficiently.  ',
-    icon: 'Node.js',
+    icon: FaNodeJs,
     experience: '4+',
   },
+
   {
     name: 'Firebase',
     description:
       "Firebase is my go-to BaaS for small or personal projects. I've got extensive experience with it's use cases, specifically with Authentication, Firestore, and Hosting.",
-    icon: 'Firebase',
+    icon: IoLogoFirebase,
     experience: '4+',
   },
   {
     name: 'AWS',
     description:
       'For larger projects, I tend to use serverless containerized functions as the backend with Docker and AWS Lambda. I have experience using EC2, S3, Elastic Beanstalk, CloudWatch, IoT Core, and CodePipeline.',
-    icon: 'AWS',
+    icon: FaAws,
     experience: '4+',
   },
   {
     name: 'GCP',
     description:
       'I have some experience using the Google Cloud Platform directly outside of the Firebase framework, including Cloud Run, Cloud Functions, Compute Engine, and Cloud Storage.',
-    icon: 'GCP',
+    icon: SiGooglecloud,
     experience: '1',
   },
 ]

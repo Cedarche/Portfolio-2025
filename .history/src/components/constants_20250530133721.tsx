@@ -67,12 +67,12 @@ export const projects = [
     },
     stack: [
       { name: 'Typescript', icon: 'Typescript' },
+      { name: 'Tailwind', icon: 'Tailwind' },
       { name: 'React', icon: 'React' },
       { name: 'React Native', icon: 'React Native' },
       { name: 'Node.js', icon: 'Node.js' },
       { name: 'GCP', icon: 'GCP' },
       { name: 'Firebase', icon: 'Firebase' },
-      { name: 'Tailwind', icon: 'Tailwind' },
     ],
     logo: Snappark,
   },
@@ -101,11 +101,7 @@ export const projects = [
     name: 'Cross Copy',
     description:
       'A simply cross-platform file transfer service that just works - without the hassle or complexity of Dropbox or Google Drive. ',
-    link: {
-      href: 'https://crosscopy.dev',
-      label: 'crosscopy.dev',
-      article: 'cross-copy-simple-cross-platform-media-sharing',
-    },
+    link: { href: 'https://crosscopy.dev', label: 'crosscopy.dev' },
     stack: [
       { name: 'Javascript', icon: 'Javascript' },
       { name: 'Node.js', icon: 'Node.js' },
@@ -120,11 +116,7 @@ export const projects = [
     name: 'Assetrix',
     description:
       'A custom internal asset tracking tool that uses QR Codes to track the location, P&ID, ISO number for industrial equipment.',
-    link: {
-      href: '#',
-
-      article: 'assetrix-custom-asset-tracking-software',
-    },
+    link: { href: '#', label: 'github.com' },
     stack: [
       { name: 'Typescript', icon: 'Typescript' },
       { name: 'React Native', icon: 'React Native' },
@@ -136,11 +128,7 @@ export const projects = [
     name: 'Stellarmetrics',
     description:
       'A remote monitoring solution for assets in rural areas, it utilises the SWARM satellite network to send small packets of data (tank water levels, pressure readings, etc.)',
-    link: {
-      href: '#',
-
-      article: 'stellarmetrics-remote-asset-monitoring-using-satellites',
-    },
+    link: { href: '#', label: 'github.com' },
     stack: [
       { name: 'Typescript', icon: 'Typescript' },
       { name: 'Styled Components', icon: 'Styled Components' },

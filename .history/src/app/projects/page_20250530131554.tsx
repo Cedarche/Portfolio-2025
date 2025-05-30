@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -15,8 +14,7 @@ function ArticleIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-5"
-      {...props}
+      className="size-6"
     >
       <path
         strokeLinecap="round"
@@ -72,26 +70,14 @@ export default function Projects() {
               className="mt-4"
               wrapOnDesktop={true}
             />
-            <div className="mt-6 flex flex-col gap-4">
-              {project.link.label && (
-                <a
-                  href={project.link.href}
-                  target="_blank"
-                  className="relative z-10 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
-                >
-                  <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{project.link.label}</span>
-                </a>
-              )}
-
-              <Link
-                href={`/articles/${project.link.article}`}
-                className="relative z-10 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
-              >
-                <ArticleIcon className="ml-0.5 h-5.5 w-5.5 flex-none text-blue-500" />
-                <Card.Cta className="mt-0 ml-2">Read article</Card.Cta>
-              </Link>
-            </div>
+            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <LinkIcon className="h-6 w-6 flex-none" />
+              <span className="ml-2">{project.link.label}</span>
+            </p>
+            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <ArticleIcon className="h-4 w-4 flex-none" />
+              <span className="ml-2">{project.link.label}</span>
+            </p>
           </Card>
         ))}
       </ul>

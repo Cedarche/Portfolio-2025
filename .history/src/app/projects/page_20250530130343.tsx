@@ -1,31 +1,13 @@
+
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { projects } from '@/components/Constants'
 import { TechnologiesScroll } from '@/components/TechnologiesScroll'
 
-function ArticleIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="size-5"
-      {...props}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
-      />
-    </svg>
-  )
-}
+
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -66,32 +48,11 @@ export default function Projects() {
               <Card.Link href={project.link.href}>{project.name}</Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
-            <TechnologiesScroll
-              items={project.stack}
-              showTooltip={false}
-              className="mt-4"
-              wrapOnDesktop={true}
-            />
-            <div className="mt-6 flex flex-col gap-4">
-              {project.link.label && (
-                <a
-                  href={project.link.href}
-                  target="_blank"
-                  className="relative z-10 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
-                >
-                  <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{project.link.label}</span>
-                </a>
-              )}
-
-              <Link
-                href={`/articles/${project.link.article}`}
-                className="relative z-10 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200"
-              >
-                <ArticleIcon className="ml-0.5 h-5.5 w-5.5 flex-none text-blue-500" />
-                <Card.Cta className="mt-0 ml-2">Read article</Card.Cta>
-              </Link>
-            </div>
+            {/* <TechnologiesScroll items={project.stack} showTooltip={false} className="mt-4" /> */}
+            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <LinkIcon className="h-6 w-6 flex-none" />
+              <span className="ml-2">{project.link.label}</span>
+            </p>
           </Card>
         ))}
       </ul>

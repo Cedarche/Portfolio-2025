@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -97,7 +97,7 @@ function SocialLink({
 
 function Education() {
   return (
-    <div className="rounded-2xl border shadow-md border-zinc-100 p-6 dark:border-zinc-700/60 bg-zinc-50 dark:bg-zinc-800/80">
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/60 bg-zinc-50 dark:bg-zinc-800/80">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <AcademicCapIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
         <span className="ml-3">Education</span>
@@ -146,14 +146,14 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="rounded-2xl border shadow-md border-zinc-100 p-6 dark:border-zinc-700/60 bg-zinc-50 dark:bg-zinc-800/80"
+      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/60 bg-zinc-50 dark:bg-zinc-800/80"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Interested in working together?</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Enter your email and I&apos;ll get back to you as soon as possible. Or <a href='https://tomcarruthers.com/contact' className='text-blue-500'>send me a message</a> with more info.
+        Enter your email and I&apos;ll get back to you as soon as possible.
       </p>
       <div className="mt-6 flex">
         <input
@@ -226,7 +226,7 @@ export default async function Home() {
 
       <Container className="mt-10 md:mt-28">
         <div className="flex flex-col gap-8 lg:flex-row">
-          <div className="aspect-square w-full rounded-2xl border shadow-lg border-zinc-200  lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 bg-zinc-100 dark:bg-zinc-800">
+          <div className="aspect-square w-full rounded-2xl border rotate-3 border-zinc-200  lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 bg-zinc-100 dark:bg-zinc-800">
             <Image
               src={avatarImage}
               alt="Tom Carruthers"
@@ -246,17 +246,15 @@ export default async function Home() {
               currently looking for work in London, UK as a front-end/fullstack
               software engineer.
             </p>
-            <TechnologiesScroll items={technologies} showTooltip={true}/>
+            <TechnologiesScroll />
             <div className="mt-6 flex items-center justify-end gap-6 md:justify-start">
               <SocialLink
-                href="https://github.com/Cedarche"
-                target='_blank'
+                href="#"
                 aria-label="Follow on GitHub"
                 icon={GitHubIcon}
               />
               <SocialLink
-                href="https://www.linkedin.com/in/tom-carruthers-1b8709184/"
-                target='_blank'
+                href="#"
                 aria-label="Follow on LinkedIn"
                 icon={LinkedInIcon}
               />

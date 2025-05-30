@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Badge } from '@/components/catalyst/badge'
-import { SiTypescript, SiJavascript, SiTailwindcss, SiStyledcomponents, SiGooglecloud } from 'react-icons/si'
-import { FaReact, FaPython, FaNodeJs, FaAws } from 'react-icons/fa'
-import { CgCPlusPlus } from 'react-icons/cg'
+import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa'
+import { SiTypescript, SiGooglecloud, SiStyledcomponents, SiTailwindcss, SiJavascript } from 'react-icons/si'
 import { IoLogoFirebase } from 'react-icons/io5'
+import { CgCPlusPlus } from 'react-icons/cg'
 
 interface TechItem {
   name: string
@@ -19,22 +19,21 @@ interface TechScrollProps {
   items: TechItem[]
   showTooltip?: boolean
   className?: string
-  wrapOnDesktop?: boolean
 }
 
 const iconMap = {
   'Typescript': SiTypescript,
-  'Javascript': SiJavascript,
   'Python': FaPython,
   'C++': CgCPlusPlus,
   'React': FaReact,
-  'React Native': FaReact,
   'Node.js': FaNodeJs,
   'Firebase': IoLogoFirebase,
   'AWS': FaAws,
   'GCP': SiGooglecloud,
-  'Tailwind': SiTailwindcss,
   'Styled Components': SiStyledcomponents,
+  'Tailwind': SiTailwindcss,
+  'Javascript': SiJavascript,
+  'React Native': FaReact,
 }
 
 function useMediaQuery(query: string) {
@@ -128,7 +127,7 @@ function TechnologyBadge({ feature, showTooltip }: { feature: TechItem; showTool
   )
 }
 
-export function TechnologiesScroll({ items, showTooltip = true, className = '', wrapOnDesktop = false }: TechScrollProps) {
+export function TechnologiesScroll({ items, showTooltip = true, className = '' }: TechScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState(0)
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -139,20 +138,8 @@ export function TechnologiesScroll({ items, showTooltip = true, className = '', 
     }
   }, [])
 
-  if (wrapOnDesktop) {
-    return (
-      <div className={`relative ${className}`}>
-        <div className="flex flex-wrap gap-2">
-          {items.map((feature) => (
-            <TechnologyBadge key={feature.name} feature={feature} showTooltip={showTooltip} />
-          ))}
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className={`relative mt-6 w-full overflow-hidden ${className}`}>
+    <div className={`relative mt-6 w-full ${className}`}>
       <motion.div
         ref={containerRef}
         className="flex whitespace-nowrap"

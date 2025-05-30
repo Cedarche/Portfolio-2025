@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -246,17 +246,15 @@ export default async function Home() {
               currently looking for work in London, UK as a front-end/fullstack
               software engineer.
             </p>
-            <TechnologiesScroll items={technologies} showTooltip={true}/>
+            <TechnologiesScroll />
             <div className="mt-6 flex items-center justify-end gap-6 md:justify-start">
               <SocialLink
-                href="https://github.com/Cedarche"
-                target='_blank'
+                href="#"
                 aria-label="Follow on GitHub"
                 icon={GitHubIcon}
               />
               <SocialLink
-                href="https://www.linkedin.com/in/tom-carruthers-1b8709184/"
-                target='_blank'
+                href="#"
                 aria-label="Follow on LinkedIn"
                 icon={LinkedInIcon}
               />
