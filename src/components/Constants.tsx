@@ -123,8 +123,8 @@ export const projects = [
     description:
       'A custom internal asset tracking tool that uses QR Codes to track the location, P&ID, ISO number for industrial equipment.',
     link: {
-      href: '#',
-
+ 
+      label: 'Read Article',
       article: 'assetrix-custom-asset-tracking-software',
     },
     stack: [
@@ -139,8 +139,8 @@ export const projects = [
     description:
       'A remote monitoring solution for assets in rural areas, it utilises the SWARM satellite network to send small packets of data (tank water levels, pressure readings, etc.)',
     link: {
-      href: '#',
-
+  
+      label: 'Read Article',
       article: 'stellarmetrics-remote-asset-monitoring-using-satellites',
     },
     stack: [

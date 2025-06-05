@@ -21,7 +21,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta >Read article</Card.Cta>
+      <Card.Cta>Read article</Card.Cta>
     </Card>
   )
 }
@@ -85,23 +85,32 @@ function Projects() {
       {projects.map((project) => (
         <div
           key={project.name}
-          className="group relative flex cursor-pointer items-start gap-4 rounded-lg border border-zinc-100 p-4 dark:border-zinc-700/60 hover:bg-green-50 dark:hover:bg-zinc-800/50 transition-all duration-200"
+          className="group relative flex cursor-pointer items-start gap-4 rounded-lg border border-zinc-100 p-4 transition-all duration-200 hover:bg-green-50 dark:border-zinc-700/60 dark:hover:bg-zinc-800/50"
         >
           <div className="absolute -inset-x-2 -inset-y-2 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-2 sm:rounded-2xl dark:bg-zinc-800/50" />
-          <div className="relative mt-1 z-10 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-            <Image src={project.logo} alt="" className="h-8 w-8 rounded-full" unoptimized />
+          <div className="relative z-10 mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <Image
+              src={project.logo}
+              alt=""
+              className="h-8 w-8 rounded-full"
+
+            />
           </div>
-          <div className="flex z-10 flex-auto flex-wrap gap-x-2">
+          <div className="z-10 flex flex-auto flex-wrap gap-x-2">
             <div className="w-full flex-none text-sm font-medium text-zinc-800 dark:text-zinc-100">
               {project.name}
             </div>
             <div className="text-sm text-zinc-600 dark:text-zinc-400">
               {project.description}
             </div>
-            <div className="ml-auto text-sm mt-1">
+            <div className="mt-1 ml-auto text-sm">
               <Link
-                href={project.link.href}
-                target='_blank'
+                href={
+                  project.link.href
+                    ? project.link.href
+                    : `/articles/${project.link.article}`
+                }
+                target="_blank"
                 className="relative z-20 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200"
               >
                 <LinkIcon className="h-6 w-6 flex-none" />
@@ -120,7 +129,7 @@ export default function LandingSlider({
 }: {
   articles: ArticleWithSlug[]
 }) {
-  const [activeTab, setActiveTab] = useState('blog')
+  const [activeTab, setActiveTab] = useState('experience')
 
   const tabs = [
     { id: 'experience', label: 'Experience' },

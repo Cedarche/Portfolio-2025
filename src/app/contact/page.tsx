@@ -78,16 +78,21 @@ export default function Contact() {
               </Field>
               <Field>
                 <Label>Last name</Label>
-                <Input name="last_name" required />
+                <Input name="last_name"  />
               </Field>
             </div>
             <Field>
               <Label>Company</Label>
-              <Input name="company" />
+              <Input name="company" required/>
             </Field>
             <Field>
               <Label>Email</Label>
-              <Input name="email" type="email" required />
+              <Input
+                name="email"
+                type="email"
+                required
+                className="focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-hidden dark:focus:border-blue-400 dark:focus:ring-blue-400/10"
+              />
             </Field>
 
             <Field>

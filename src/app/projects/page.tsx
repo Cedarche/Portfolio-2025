@@ -59,11 +59,19 @@ export default function Projects() {
                 src={project.logo}
                 alt=""
                 className="h-9 w-9 rounded-full"
-                unoptimized
+
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              <Card.Link
+                href={
+                  project.link.href
+                    ? project.link.href
+                    : `/articles/${project.link.article}`
+                }
+              >
+                {project.name}
+              </Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
             <TechnologiesScroll
@@ -73,7 +81,7 @@ export default function Projects() {
               wrapOnDesktop={true}
             />
             <div className="mt-6 flex flex-col gap-4">
-              <div className='flex items-center gap-4'>
+              <div className="flex items-center gap-4">
                 {project.link.label && (
                   <a
                     href={project.link.href}

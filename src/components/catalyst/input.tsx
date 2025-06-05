@@ -49,6 +49,7 @@ export const Input = forwardRef(function Input(
         'has-[[data-disabled]]:opacity-50 before:has-[[data-disabled]]:bg-zinc-950/5 before:has-[[data-disabled]]:shadow-none',
         // Invalid state
         'before:has-[[data-invalid]]:shadow-red-500/10',
+        
       ])}
     >
       <Headless.Input
@@ -76,11 +77,11 @@ export const Input = forwardRef(function Input(
           // Typography
           'text-base/6 text-zinc-950 placeholder:text-zinc-500 sm:text-sm/6 dark:text-white',
           // Border
-          'border border-zinc-950/10 data-[hover]:border-zinc-950/20 dark:border-white/10 dark:data-[hover]:border-white/20',
+          'border border-zinc-950/10 data-[hover]:border-zinc-950/20 dark:border-white/10 dark:data-[hover]:border-blue-400/40',
           // Background color
           'bg-transparent dark:bg-white/5',
           // Hide default focus styles
-          'focus:outline-none',
+          'focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-hidden dark:focus:border-blue-400/40 dark:focus:ring-blue-400/10"',
           // Invalid state
           'data-[invalid]:border-red-500 data-[invalid]:data-[hover]:border-red-500 data-[invalid]:dark:border-red-500 data-[invalid]:data-[hover]:dark:border-red-500',
           // Disabled state
