@@ -115,7 +115,7 @@ export function ContactSection() {
         </div>
         {status === 'success' && (
           <p className="mt-4 text-sm text-green-600 dark:text-green-400">
-            Message sent successfully! I'll get back to you soon.
+            Message sent successfully! I&apos;ll get back to you soon.
           </p>
         )}
         {status === 'error' && (
