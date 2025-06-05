@@ -18,9 +18,9 @@ export const experience = [
     content: [
       'Applied technical expertise and project management capabilities to develop mobile and web applications using React and React Native to meet client requirements. Managed deployments using AWS and GCP, ensuring scalable and secure solutions.',
       'Created a custom QR code asset-tracking mobile application using React Native and Firebase, which enabled a client to accurately record the location and installation conditions of all components within a compressor station. This solution streamlined asset management and decommissioning processes, saving the client tens of thousands of dollars.',
-      'Developed Snap Park, a parking management system using React/React Native and GCP, to notify employees when the office parking lot becomes full. Further developed the application to a viable SaaS product that&apos;s still in use today (snappark.co).',
+      'Developed Snap Park, a parking management system using React/React Native and GCP, to notify employees when the office parking lot becomes full. Further developed the application to a viable SaaS product that is still in use today (snappark.co).',
       'Developed and deployed a leak detection and water level monitoring system using a custom ESP32 sensor unit, C++, Node.js and AWS IoT Core, and the SWARM satellite network. The system provided real-time data visualization and alerts through a web dashboard built with React, and generated daily PDF reports to ensure compliance with regulatory conditions.',
-      'Engineered a predictive flood modeling tool using Python to synthesize 130 years of hourly rainfall data for a prospective exploration well location, integrating the results into QGIS for civil construction planning. The tool&apos;s visualization capabilities supported strategic decision-making in remote areas prone to flooding.',
+      'Engineered a predictive flood modeling tool using Python to synthesize 130 years of hourly rainfall data for a prospective exploration well location, integrating the results into QGIS for civil construction planning. The tools visualization capabilities supported strategic decision-making in remote areas prone to flooding.',
     ],
   },
   {
