@@ -109,7 +109,7 @@ function TechnologyBadge({
   showTooltip?: boolean
 }) {
   const [isHovered, setIsHovered] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const badgeRef = useRef<HTMLDivElement>(null)
   const Icon = iconMap[feature.icon as keyof typeof iconMap]
 

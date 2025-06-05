@@ -78,10 +78,12 @@ Card.Description = function CardDescription({
 
 Card.Cta = function CardCta({
   children,
+  href,
   className,
 }: {
   children: React.ReactNode
   className?: string
+  href?: string
 }) {
   return (
     <div
@@ -91,7 +93,7 @@ Card.Cta = function CardCta({
         className,
       )}
     >
-      {children}
+      {href ? <Link href={href}>{children}</Link> : children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
     </div>
   )
