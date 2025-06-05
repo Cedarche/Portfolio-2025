@@ -2,7 +2,7 @@ import { type Metadata } from 'next'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
-
+import { Analytics } from '@vercel/analytics/next'
 import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
@@ -17,9 +17,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: '/icon.png', type: 'image/png' },
-    ],
+    icon: [{ url: '/icon.png', type: 'image/png' }],
   },
 }
 
@@ -31,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
+        <Analytics />
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>
