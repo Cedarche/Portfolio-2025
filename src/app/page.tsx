@@ -11,6 +11,15 @@ import { TechnologiesScroll } from '@/components/TechnologiesScroll'
 import { ContactSection } from '@/components/ContactSection'
 import { ArrowDownIcon, SocialLink } from '@/components/Icons'
 import { Education } from '@/components/Education'
+import {Bungee} from 'next/font/google'
+
+// [shadow:_3px_3px_0px_##2c7fff,_6px_6px_0px_#07bccc99,_9px_9px_0px_#07bccc66,_12px_12px_0px_#07bccc33]  sm:aspect-[0.79]
+// dark:drop-shadow-[0px_0px_8px_rgba(198,194,201,0.3)]
+
+const roboto = Bungee({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
@@ -18,8 +27,11 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-10 md:mt-28">
-        <div className="flex flex-col gap-8 lg:flex-row">
-          <div className="aspect-square w-full rounded-2xl border border-zinc-200 bg-zinc-100 shadow-lg lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 dark:bg-zinc-800">
+        <div className="relative flex flex-col items-center gap-8 sm:items-start lg:flex-row">
+          <h1 className={`sm:hidden absolute -top-2 -left-0 -rotate-[15deg] transform text-[2.5rem] font-bold tracking-tight text-zinc-800  sm:static sm:transform-none sm:text-5xl dark:text-zinc-100 ${roboto.className}`}>
+            Hi, I&apos;m Tom
+          </h1>
+          <div className="aspect-square sm:aspect-[0.79] w-[90%] rounded-2xl border border-zinc-200 bg-zinc-100 shadow-lg  lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 dark:bg-zinc-800">
             <Image
               src={avatarImage}
               alt="Tom Carruthers Headshot"
@@ -28,10 +40,10 @@ export default async function Home() {
             />
           </div>
           <div className="w-full overflow-hidden sm:overflow-visible lg:w-3/4">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            <h1 className={`hidden sm:block text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl  dark:text-zinc-100 ${roboto.className}`}>
               Hi, I&apos;m Tom
             </h1>
-            <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            <p className="mt-0 sm:mt-6 text-base text-zinc-600 dark:text-zinc-400">
               I&apos;m a mechanical engineer and self-taught developer with 5+
               years of experience designing, developing, and managing fullstack
               applications and internal tools. I&apos;ve built a number of both
