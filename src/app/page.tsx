@@ -6,17 +6,19 @@ import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import LandingSlider from '@/components/LandingSlider'
 import { Divider } from '@/components/catalyst/divider'
 import { technologies } from '@/components/Constants'
-import avatarImage from '@/images/Headshot-nobg.png'
+import avatarImage from '@/images/Headshot-nobg-small.png'
 import { TechnologiesScroll } from '@/components/TechnologiesScroll'
 import { ContactSection } from '@/components/ContactSection'
 import { ArrowDownIcon, SocialLink } from '@/components/Icons'
 import { Education } from '@/components/Education'
-import {Bungee} from 'next/font/google'
+import { Bungee } from 'next/font/google'
+import Headshot from '@/components/Headshot'
+import { Silhouette } from '@/components/Silhouette'
 
 // [shadow:_3px_3px_0px_##2c7fff,_6px_6px_0px_#07bccc99,_9px_9px_0px_#07bccc66,_12px_12px_0px_#07bccc33]  sm:aspect-[0.79]
 // dark:drop-shadow-[0px_0px_8px_rgba(198,194,201,0.3)]
 
-const roboto = Bungee({
+const bungee = Bungee({
   weight: '400',
   subsets: ['latin'],
 })
@@ -26,24 +28,21 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-10 md:mt-28">
+      <Container className="mt-12 sm:mt-10 md:mt-28">
         <div className="relative flex flex-col items-center gap-8 sm:items-start lg:flex-row">
-          <h1 className={`sm:hidden absolute -top-2 -left-0 -rotate-[15deg] transform text-[2.5rem] font-bold tracking-tight text-zinc-800  sm:static sm:transform-none sm:text-5xl dark:text-zinc-100 ${roboto.className}`}>
+          <h1
+            className={`absolute -top-5 -left-0 z-50 -rotate-[12deg] transform text-[2.4rem] font-black text-zinc-800 sm:static sm:hidden sm:transform-none sm:text-5xl dark:text-zinc-100 ${bungee.className}`}
+          >
             Hi, I&apos;m Tom
           </h1>
-          <div className="aspect-square sm:aspect-[0.79] w-[90%] rounded-2xl border border-zinc-200 bg-zinc-100 shadow-lg  lg:mr-2 lg:w-1/4 dark:border-zinc-700/60 dark:bg-zinc-800">
-            <Image
-              src={avatarImage}
-              alt="Tom Carruthers Headshot"
-              className="h-full w-full rounded-2xl object-cover"
-              priority
-            />
-          </div>
+          <Headshot/>
           <div className="w-full overflow-hidden sm:overflow-visible lg:w-3/4">
-            <h1 className={`hidden sm:block text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl  dark:text-zinc-100 ${roboto.className}`}>
+            <h1
+              className={`hidden text-4xl font-black text-zinc-800 sm:block sm:text-5xl dark:text-zinc-100 ${bungee.className}`}
+            >
               Hi, I&apos;m Tom
             </h1>
-            <p className="mt-0 sm:mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            <p className="mt-0 text-base text-zinc-600 sm:mt-4 dark:text-zinc-400">
               I&apos;m a mechanical engineer and self-taught developer with 5+
               years of experience designing, developing, and managing fullstack
               applications and internal tools. I&apos;ve built a number of both

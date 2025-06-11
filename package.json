@@ -31,7 +31,7 @@
     "clsx": "^2.1.0",
     "fast-glob": "^3.2.11",
     "feed": "^4.2.2",
-    "framer-motion": "^12.11.3",
+    "framer-motion": "^12.17.0",
     "next": "^14.0.4",
     "next-themes": "^0.2.1",
     "nodemailer": "^7.0.3",

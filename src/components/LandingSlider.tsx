@@ -21,7 +21,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Cta href={`/articles/${article.slug}`}>Read article</Card.Cta>
     </Card>
   )
 }
@@ -93,7 +93,6 @@ function Projects() {
               src={project.logo}
               alt=""
               className="h-8 w-8 rounded-full"
-
             />
           </div>
           <div className="z-10 flex flex-auto flex-wrap gap-x-2">
