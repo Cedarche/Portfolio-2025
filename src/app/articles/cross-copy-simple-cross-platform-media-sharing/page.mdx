@@ -7,6 +7,7 @@ import dashboard_example from './Dashboard_example.png'
 import text_example from './CC_Text.png'
 import history_example from './CC_History.png'
 import extension_example from './CC_Extension.png'
+import ArticleImage from '@/components/ArticleImage'
 
 import {
   InformationCircleIcon,
@@ -36,7 +37,7 @@ to email links, text, and files to yourself. It works in a similar way to
 Google Drive or Dropbox, but without the bloat of folders,
 subscriptions, or size limits.
 
-<Image src={hero} alt="The Cross Copy landing page." />
+<ArticleImage src={hero} alt="The Cross Copy landing page." />
 
 As with most of my projects, I built Cross Copy to overcome a
 common problem that I encountered at work. Part of my previous job
@@ -95,12 +96,12 @@ All of the source code is available on my <a href="https://github.com/Cedarche/C
 
 The easiest way to use the service is to simply open the website <a href="https://crosscopy.dev/" target="_blank">crosscopy.dev</a> in a browser. Users can either choose to create an account, or continue anonymously with a linking code. They're then taken to the main homepage as seen below where they can paste text or add files.
 
-<Image src={dashboard_example} alt="The Cross Copy homepage." />
+<ArticleImage src={dashboard_example} alt="The Cross Copy homepage." />
 
 Anything added to the homepage is instantly synced to their account, and is available in the browser, app, and chrome extension on any device. There is no compression or restriction on what kind of file can be transferred which is great when you need full resolution images.
 
 <div className="flex flex-col items-center justify-center">
-  <Image
+  <ArticleImage
     src={mobile_example}
     alt="An example of the Cross Copy homepage on mobile"
     className="h-[600px] w-auto"
@@ -112,12 +113,12 @@ between devices. Any text that is typed or pasted into the window retains
 it's content, styling, and media.
 
 <div className="flex flex-col gap-y-4 sm:flex-row items-center justify-center gap-x-4">
-  <Image
+  <ArticleImage
     src={text_example}
     alt="An example of the Cross Copy text section."
     className="h-[500px] w-auto rounded-sm"
   />
-  <Image
+  <ArticleImage
     src={history_example}
     alt="An example of the Cross Copy history section."
     className="h-[500px] w-auto rounded-sm"
@@ -163,7 +164,7 @@ the extension sits quietly in the Chrome toolbar, ready to open with a
 single click.
 
 <div className="flex flex-col items-center justify-center">
-  <Image
+  <ArticleImage
     src={extension_example}
     alt="An example of the Cross Copy Extension"
     className="h-auto w-[300px] rounded-sm"

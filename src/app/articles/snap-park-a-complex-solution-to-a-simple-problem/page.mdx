@@ -7,6 +7,7 @@ import example_spot from './Example_Spot.png'
 import dashboard_example from './Dashboard_Example.png'
 import billing_example from './Snappark_billing_example.png'
 import settings_example from './Snappark_settings_example.png'
+import ArticleImage from '@/components/ArticleImage'
 
 export const article = {
   author: 'Tom Carruthers',
@@ -23,30 +24,30 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Snap Park is my latest and most developed endeavour, I built it to 
-solve a common problem among many companies - office parking spot 
+Snap Park is my latest and most developed endeavour, I built it to
+solve a common problem among many companies - office parking spot
 availability.
 
-<Image src={hero} alt="The Snap Park Landing page." />
+<ArticleImage src={hero} alt="The Snap Park Landing page." />
 
-What started as a simple experiment with QR codes quickly developed 
-into 4-6 month obsession where I spent every moment outside work hours 
-developing a fully functional SaaS product - complete with detailed 
-landing page, thorough onboarding process, billing, and a functional 
+What started as a simple experiment with QR codes quickly developed
+into 4-6 month obsession where I spent every moment outside work hours
+developing a fully functional SaaS product - complete with detailed
+landing page, thorough onboarding process, billing, and a functional
 dashboard.
 
 ## The Problem
 
-At my previous job we had 20 employees who drove to work, and only 6 
-available carparks in the office. However, as it was a multi-story 
-carpark, there was no way of knowing if there were still spots available 
-before driving all the way up to check. Unless you were there bright and 
-early, you enevitably found yourself frustrated, fighting your way back 
-down against oncoming traffic, only to then have to seek out some kind 
+At my previous job we had 20 employees who drove to work, and only 6
+available carparks in the office. However, as it was a multi-story
+carpark, there was no way of knowing if there were still spots available
+before driving all the way up to check. Unless you were there bright and
+early, you enevitably found yourself frustrated, fighting your way back
+down against oncoming traffic, only to then have to seek out some kind
 of alternative parking (in a busy business district).
 
-While Snap Park doesnt aleviate the issue of parking spot availability, 
-it at least saves you the hassle and time of getting stuck in an 
+While Snap Park doesnt aleviate the issue of parking spot availability,
+it at least saves you the hassle and time of getting stuck in an
 already full office carpark.
 
 Having just recently built Assetrix for a client at work, I was
@@ -57,7 +58,7 @@ stickers like the one below on each of our carparks:
 
 <div className="flex flex-col justify-center items-center">
 
-<Image
+<ArticleImage
   src={example_sticker}
   alt="An example of a QR Code Sticker."
   className="h-[400px] w-auto"
@@ -68,8 +69,8 @@ When an employee arrives at work and takes an available park, they then
 scan the adjacent code and mark it as unavailable on it's
 associated webpage.
 
-<div className="flex flex-col justify-center items-center">
-  <Image
+<div className="flex flex-col items-center justify-center">
+  <ArticleImage
     src={example_spot}
     alt="An example of a QR Code Sticker."
     className="h-auto w-[300px] border border-zinc-100"
@@ -91,7 +92,7 @@ After about 6 months I went to the company directors to try and gauge their resp
 
 It turns out that building such a system is easy for one company, but quite difficult when trying to handle multiple companies, and support multiple offices for each company. I essentially had to start from scratch, integrating authentication, usage based billing via Stripe, and re-structuring my database to correctly protect the sensitive information of each company and their employees.
 
-<Image src={dashboard_example} alt="The Snap Park Dashboard." />
+<ArticleImage src={dashboard_example} alt="The Snap Park Dashboard." />
 
 The main Dashboard allows a company to add/adjust their parking spots,
 generate new QR Code stickers, add to or edit the notification list, and
@@ -109,7 +110,7 @@ printed, I didn't know this at the time but almost all printers have
 different margins that are built in and can't be changed. You can see an
 example of what I eventually came up with <a href="/QRStickersExample.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500 cursor-pointer">here</a>.
 
-<Image src={billing_example} alt="An example of the Snap Park Billing page." />
+<ArticleImage src={billing_example} alt="An example of the Snap Park Billing page." />
 
 The system also allows for fine tuning an office's notifications. It
 allows a company to send out text messages based on certain conditions.
@@ -117,7 +118,7 @@ For example, a company can choose to send an notification out when their
 is only one spot remain, or when certain spots (e.g. visitors) have been
 taken.
 
-<Image
+<ArticleImage
   src={settings_example}
   alt="An example of the Snap Park Settings page."
 />

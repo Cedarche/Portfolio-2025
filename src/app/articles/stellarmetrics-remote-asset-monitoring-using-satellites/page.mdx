@@ -7,6 +7,7 @@ import HomepageExample from './Stellarmetrics_homepage_2.png'
 import Stellarmetrics_front from './Stellarmetrics_front.png'
 import Stellarmetrics_back from './Stellarmetrics_back.png'
 import Prototype1 from './Stellarmetrics_prototype1.jpeg'
+import ArticleImage from '@/components/ArticleImage'
 
 export const article = {
   author: 'Tom Carruthers',
@@ -29,7 +30,7 @@ extremely remote areas without mobile coverage; during operations we
 would often have a generator, and satellite internet (Starlink) set
 up to provide internet access and telemetry data.
 
-<Image
+<ArticleImage
   src={WebsiteExample}
   alt="The Stellarmetrics Landing Page (It's just a placeholder don't judge)."
 />
@@ -80,7 +81,7 @@ manufactured. Luckily my struggles learning to build the the Ream
 Tile had finally paid off and I was able to get them mostly right
 the first time round (somehow).
 
-<Image src={Prototype1} alt="An early example" />
+<ArticleImage src={Prototype1} alt="An early example" />
 
 In the image above you can see early prototypes of the Hub (in
 red) and a node (black). The node takes distance measurement using
@@ -123,12 +124,12 @@ include 4x I2C or PWM inputs, 2 antenna ports, a power in port, a
 GPS module, indicator lights, and a TFT Screen.
 
 <div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
-  <Image
+  <ArticleImage
     src={Stellarmetrics_front}
     alt="Stellarmetrics Hub front"
     className="h-[400px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
   />
-  <Image
+  <ArticleImage
     src={Stellarmetrics_back}
     alt="Stellarmetrics Hub back"
     className="h-[400px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
@@ -160,7 +161,7 @@ on, entering sleep mode, or troubleshooting - completely remotely. The
 website is still very much unfinished, and is currently using example
 data sets that I made as a proof of concept.
 
-<Image src={HomepageExample} alt="The Stellarmetrics homepage." />
+<ArticleImage src={HomepageExample} alt="The Stellarmetrics homepage." />
 
 I think if I was ever going to pursue the project properly I'd make the
 interface not so flashy, less gradients/bright colours.

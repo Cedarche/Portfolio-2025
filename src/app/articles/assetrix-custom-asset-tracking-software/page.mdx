@@ -5,6 +5,8 @@ import Assetrix_1 from './Assetrix_1.jpeg'
 import Assetrix_2 from './Assetrix_2.jpeg'
 import AssetrixQR1 from './Assetrix_QRCodes_1.jpeg'
 import AssetrixQR2 from './Assetrix_QRCodes_2.jpeg'
+import ArticleImage from '@/components/ArticleImage'
+
 
 export const article = {
   author: 'Tom Carruthers',
@@ -67,12 +69,12 @@ turned out to be overkill, and a simple web application would have
 worked fine, but hindsight is 20-20.
 
 <div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
-  <Image
+  <ArticleImage
     src={Assetrix_1}
     alt="An example of separating equipment into super structures"
     className="h-[600px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
   />
-  <Image
+  <ArticleImage
     src={Assetrix_2}
     alt="An example of an asset page"
     className="h-[600px] w-auto rounded-2xl border border-zinc-100 shadow-lg"
@@ -96,12 +98,12 @@ Inventory page example above, where the super structures often
 have 2 or more colours attached to them.
 
 <div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
-  <Image
+  <ArticleImage
     src={AssetrixQR1}
     alt="An example of a QR code sticker on a piece of equipment."
     className="h-[400px] w-auto rounded-2xl shadow-lg"
   />
-  <Image
+  <ArticleImage
     src={AssetrixQR2}
     alt="A second example of a QR code sticker on a piece of equipment."
     className="h-[400px] w-auto rounded-2xl shadow-lg"
@@ -114,6 +116,6 @@ intent that when the compressor station is reconstructed in Q4
 piece of equipment, and know exactly where it is meant to go.
 
 The app is still in regular use at my previous company to help
-organise equipment refurbishment. I haven't made either the code
+organize equipment refurbishment. I haven't made either the code
 or the app itself public as it is technically not my property -
 being built on company time.

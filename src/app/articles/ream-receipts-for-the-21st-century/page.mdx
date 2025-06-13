@@ -13,10 +13,11 @@ import tile_cutaway_dark from './Ream_tile_cutaway_dark.png'
 import tile_prototype from './Ream_tile_prototype.png'
 import tile_light from './Ream_tile_whole.png'
 import tile_dark from './Ream_tile_whole_dark.png'
+import ArticleImage from '@/components/ArticleImage'
 
 export const article = {
   author: 'Tom Carruthers',
-  date: '2025-03-08',
+  date: '2025-04-08',
   title: 'Ream - Receipts for the 21st century',
   description:
     'This is the very first project I started back in 2019, and through it Ive learnt to use React, React Native, Node.js, PCB design, and a range of accessory frameworks.',
@@ -33,7 +34,7 @@ This is the very first project I started back in 2019, and through
 it I've learnt to use React, React Native, Node.js, PCB design, and
 a range of accessory frameworks.
 
-<Image src={hero} alt="An example of the tile and a digital receipt." />
+<ArticleImage src={hero} alt="An example of the tile and a digital receipt." />
 
 The concept of Ream is simple, nobody likes paper receipts. While
 most people don't give receipts a second thought, I, like many
@@ -104,7 +105,7 @@ This was the first website I ever built, so you'll have to excuse some
 of the styling. I have refactored it over the years to use typescript,
 however much of the original code is fairly low-quality.
 
-<Image src={homepage} alt="The Ream landing page." />
+<ArticleImage src={homepage} alt="The Ream landing page." />
 
 The website is primarily designed to be viewed on mobile, as the
 majority of the customers would access it via their digital receipt in
@@ -115,8 +116,7 @@ dynamic receipts. An example of a dynamic digital receipt
 can be seen below:
 
 <div className="flex flex-col gap-y-6 sm:flex-row items-center justify-center sm:gap-x-4">
-
-  <Image
+  <ArticleImage
     src={dynamic_receipt}
     alt="An example of a dynamic receipt."
     className=" w-[80%] sm:w-[50%] rounded-2xl"
@@ -180,12 +180,12 @@ whole system I have a LiPo battery and a charge/protection circuit
 with a USB-C port.
 
 <div className="flex flex-col items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
-  <Image
+  <ArticleImage
     src={pcb_front}
     alt="The Tile PCB front."
     className="h-[350px] w-auto rounded-2xl"
   />
-  <Image
+  <ArticleImage
     src={pcb_back}
     alt="The Tile PCB back with PCB antenna."
     className="h-[350px] w-auto rounded-2xl"
@@ -211,8 +211,8 @@ After months of integration hell I finally had a fully working system.
 You can see an x-ray view of the Tile below, as well as some
 functioning prototypes.
 
-<Image src={tile_cutaway_dark} alt="An x-ray view of the tile." />
-<Image src={tile_prototype} alt="Some prototypes of the tile." />
+<ArticleImage src={tile_cutaway_dark} alt="An x-ray view of the tile." />
+<ArticleImage src={tile_prototype} alt="Some prototypes of the tile." />
 
 ## The Ream API
 
