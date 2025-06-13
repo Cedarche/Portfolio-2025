@@ -161,8 +161,7 @@ export function TechnologiesScroll({
 
   useEffect(() => {
     if (containerRef.current) {
-      const width = containerRef.current.scrollWidth / 2 // We'll animate half the total width
-      setContainerWidth(width)
+      setContainerWidth(containerRef.current.offsetWidth)
     }
   }, [])
 
@@ -177,6 +176,7 @@ export function TechnologiesScroll({
               showTooltip={showTooltip}
             />
           ))}
+       
         </div>
       </div>
     )
@@ -184,46 +184,62 @@ export function TechnologiesScroll({
 
   return (
     <div className={`relative z-10 mt-6 w-full ${className}`}>
-      <div className="hidden gap-2 sm:flex">
-        {items.map((feature) => (
-          <TechnologyBadge
-            key={feature.name}
-            feature={feature}
-            showTooltip={showTooltip}
-          />
-        ))}
-      </div>
-      {isMobile && (
-        <div className="relative overflow-hidden sm:hidden">
-          <motion.div
-            ref={containerRef}
-            className="flex gap-2"
-            animate={{
-              x: [0, -containerWidth],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 20,
-                ease: 'linear',
-              },
-            }}
-          >
-            {[...Array(4)].map((_, setIndex) => (
-              <div key={setIndex} className="flex gap-2">
-                {items.map((feature) => (
-                  <TechnologyBadge
-                    key={`${feature.name}-${setIndex}`}
-                    feature={feature}
-                    showTooltip={showTooltip}
-                  />
-                ))}
-              </div>
-            ))}
-          </motion.div>
+      <motion.div
+        ref={containerRef}
+        drag={isMobile ? 'x' : false}
+        whileDrag={{ scale: 0.95 }}
+        dragElastic={0.2}
+        dragConstraints={{ right: 0, left: -containerWidth-60 }}
+        dragTransition={{ bounceDamping: 30 }}
+        className="flex whitespace-nowrap"
+        animate={
+          isMobile
+            ? {
+                x: [0, -containerWidth-60],
+              }
+            : {}
+        }
+        transition={
+          isMobile
+            ? {
+                x: {
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  duration: 25,
+                  ease: 'linear',
+                },
+              }
+            : {}
+        }
+      >
+        <div className="hidden gap-2 sm:flex">
+          {items.map((feature) => (
+            <TechnologyBadge
+              key={feature.name}
+              feature={feature}
+              showTooltip={showTooltip}
+            />
+          ))}
         </div>
-      )}
+        {isMobile && (
+          <div className="flex gap-2 sm:hidden">
+            {items.map((feature) => (
+              <TechnologyBadge
+                key={`${feature.name}-duplicate`}
+                feature={feature}
+                showTooltip={showTooltip}
+              />
+            ))}
+            {items.map((feature) => (
+              <TechnologyBadge
+                key={`${feature.name}-duplicate`}
+                feature={feature}
+                showTooltip={showTooltip}
+              />
+            ))}
+          </div>
+        )}
+      </motion.div>
     </div>
   )
 }
